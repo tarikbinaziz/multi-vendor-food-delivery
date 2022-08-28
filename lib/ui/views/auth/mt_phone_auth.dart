@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 import 'mt_register.dart';
 
@@ -13,6 +14,7 @@ class PhoneAuth extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
@@ -48,7 +50,7 @@ class PhoneAuth extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            TextField(
+            AppTextField(
               decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFDEDEE0))),
@@ -58,6 +60,7 @@ class PhoneAuth extends StatelessWidget {
                     FeatherIcons.phone,
                     color: kMainColor,
                   )),
+              textFieldType: TextFieldType.PHONE,
             ),
             SizedBox(
               height: 34,

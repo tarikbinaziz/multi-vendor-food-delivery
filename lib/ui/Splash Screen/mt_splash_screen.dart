@@ -1,7 +1,8 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'mt_on_boarding/mt_on_boarding.dart';
+
+import '../views/onbording/mt_on_boarding.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -28,10 +29,6 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Center(
             child: Image.asset(
           "assets/logo/logo.png",
-          //  height: 230,
-          // width: MediaQuery.of(context).size.width,
-
-          // height: 130,
         )),
       ),
     );

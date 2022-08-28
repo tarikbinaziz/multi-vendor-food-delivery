@@ -63,6 +63,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               topLeft: Radius.circular(20),
                               topRight: Radius.circular(20))),
                       child: Column(
+                        verticalDirection: VerticalDirection.down,
                         children: [
                           SizedBox(
                             height: 20.0,

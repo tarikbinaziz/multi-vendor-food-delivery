@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                       size: 15,
                     ),
                     "Continue with Google",
-                    kButtonFBGColor,
+                    kButtonFBGColor,kTitleColor,
                     () {}),
                 SizedBox(
                   height: 8,
@@ -52,9 +52,10 @@ class WelcomeScreen extends StatelessWidget {
                     Icon(
                       FeatherIcons.facebook,
                       size: 20,
+                      color: Colors.white,
                     ),
                     "Continue with Facebook",
-                    kButtonSBGColor,
+                    kButtonSBGColor,Colors.white,
                     () {}),
                 SizedBox(
                   height: 8,
@@ -65,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                       size: 20,
                     ),
                     "Continue with Phone",
-                    kButtonFBGColor, () {
+                    kButtonFBGColor,kTitleColor, () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => PhoneAuth()));
                 }),
@@ -78,7 +79,7 @@ class WelcomeScreen extends StatelessWidget {
                       size: 20,
                     ),
                     "Continue with Email",
-                    kButtonFBGColor,
+                    kButtonFBGColor,kTitleColor,
                     () {}),
               ],
             ),

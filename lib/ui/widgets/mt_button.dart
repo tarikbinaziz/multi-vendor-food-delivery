@@ -10,8 +10,9 @@ class WelcomeButton extends StatelessWidget {
   String text;
   Color color;
   Function function;
+  Color textColor;
 
-  WelcomeButton(this.widget, this.text, this.color, this.function);
+   WelcomeButton(this.widget, this.text, this.color,this.textColor, this.function);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class WelcomeButton extends StatelessWidget {
           leading: widget,
           title: Text(
             text,
-            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16,color: textColor),
           ),
           trailing: Container(
             height: 30,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:multivendor_food_delivery_app/ui/views/mt_splash_screen.dart';
+import 'package:multivendor_food_delivery_app/ui/Splash%20Screen/mt_splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
