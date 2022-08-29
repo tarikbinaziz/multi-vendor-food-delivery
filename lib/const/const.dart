@@ -16,7 +16,8 @@ const kStarColor= Color(0xFFFFC700);
 const kSuperOfferContainerColor= Color(0xFFFFF7F5);
 const kTruckColor=Color(0xFF12B289);
 const kDividerColor= Color(0xFFDEDEE0);
-
+const kContainerBorderColor= Color(0xFFFBA06A);
+const kBorderColor = Color(0xFFB9BBC8);
 
 
 
