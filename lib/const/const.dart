@@ -32,3 +32,4 @@ final otpInputDecoration = InputDecoration(
 
 
 String description = "Pellentesque egestas sit tincidunt porta leo a con se ctetur. At nisl semper urna vitae sed is vehicula. Pu rus dis at nibh quis. Convallis od io  semper urna vitae sed vehicula.";
+String comment = "Nibh nibh quis dolor in. Etiam cras nisi, turpis all quisque diam";

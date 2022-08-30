@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:multivendor_food_delivery_app/ui/Home/mt_items_details.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../const/const.dart';
+import '../views/Location/mt_add_new_address.dart';
 
 class DetailsRestaurant extends StatefulWidget {
   const DetailsRestaurant({Key? key}) : super(key: key);
@@ -37,6 +40,177 @@ class _DetailsRestaurantState extends State<DetailsRestaurant> {
   void initState() {
     makeKey();
     super.initState();
+  }
+
+  void _modalBottomSheetMenu() {
+    showModalBottomSheet(
+        context: context,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        builder: (builder) {
+          return Container(
+            color: Colors.transparent,
+            child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: const Radius.circular(10.0),
+                        topRight: const Radius.circular(10.0))),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "Write a Review",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: kTitleColor,
+                                overflow: TextOverflow.ellipsis),
+                          ),
+                          Spacer(),
+                          TextButton(
+                              onPressed: () => finish(context),
+                              child: Icon(
+                                Icons.close,
+                                color: kTitleColor,
+                              )),
+                        ],
+                      ),
+                      Image.asset("assets/images/biram.png"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Haven’t Purchased this Product?",
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        comment,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: kSubTitleColor),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          _shoppingBottomSheetMenu();
+                        },
+                        child: Text("Continue Shopping"),
+                        style: ElevatedButton.styleFrom(
+                            primary: kMainColor,
+                            minimumSize: Size(double.infinity, 50)),
+                      )
+                    ],
+                  ),
+                )),
+          );
+        });
+  }
+  void _shoppingBottomSheetMenu() {
+    showModalBottomSheet(
+        context: context,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        builder: (builder) {
+          return Container(
+            color: Colors.transparent,
+            child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: const Radius.circular(10.0),
+                        topRight: const Radius.circular(10.0))),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "Write a Review",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: kTitleColor,
+                                overflow: TextOverflow.ellipsis),
+                          ),
+                          Spacer(),
+                          TextButton(
+                              onPressed: () => finish(context),
+                              child: Icon(
+                                Icons.close,
+                                color: kTitleColor,
+                              )),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Enter Your Opinion",
+                        style: TextStyle(fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                     RatingBarWidget(
+                       rating: 3,
+                         itemCount: 5,
+                         size: 35,
+                         activeColor: kStarColor,
+                         inActiveColor: kStarColor,
+                         onRatingChanged: (value){
+                       setState(() {
+                         value=rating;
+                       });
+                     }),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Enter Your Opinion",
+                        style: TextStyle(fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextField(
+                        textAlign: TextAlign.start,
+                        maxLines: 5,
+                        decoration: InputDecoration(
+                          hintText:"Message...",
+                          contentPadding: EdgeInsets.only(bottom: 20,left: 10),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: kBorderColor),
+                            borderRadius: BorderRadius.circular(10.0)
+
+                          )
+                        ),
+
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text("Apply"),
+                        style: ElevatedButton.styleFrom(
+                            primary: kMainColor,
+                            minimumSize: Size(double.infinity, 50)),
+                      )
+                    ],
+                  ),
+                )),
+          );
+        });
   }
 
   @override
@@ -437,7 +611,8 @@ class _DetailsRestaurantState extends State<DetailsRestaurant> {
                           )
                         ],
                       ),
-                      ExpansionTile(
+                      ExpansionTile   (
+
                         collapsedIconColor: kTitleColor,
                         collapsedTextColor: kTitleColor,
                         tilePadding: EdgeInsets.zero,
@@ -463,7 +638,268 @@ class _DetailsRestaurantState extends State<DetailsRestaurant> {
                         children: [
                           Column(
                             children: [
-
+                              Row(
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        height: 66,
+                                        width: 66,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                color: kContainerBorderColor
+                                                    .withOpacity(0.3))),
+                                        child: Center(
+                                            child: Text(
+                                          "4.9",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 30,
+                                              color: kMainColor),
+                                        )),
+                                      ),
+                                      SizedBox(
+                                        height: 6,
+                                      ),
+                                      Text(
+                                        "Total 22 reviews",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          LinearPercentIndicator(
+                                            width: 130,
+                                            lineHeight: 8.0,
+                                            percent: 0.9,
+                                            progressColor: kMainColor,
+                                            backgroundColor: kBorderColor,
+                                            barRadius:
+                                                const Radius.circular(15),
+                                          ),
+                                          const SizedBox(
+                                              width: 30,
+                                              child: Center(
+                                                  child: Text(
+                                                '30',
+                                              ))),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          LinearPercentIndicator(
+                                            width: 130,
+                                            lineHeight: 8.0,
+                                            percent: 0.7,
+                                            progressColor: kMainColor,
+                                            backgroundColor: kBorderColor,
+                                            barRadius:
+                                                const Radius.circular(15),
+                                          ),
+                                          const SizedBox(
+                                              width: 30,
+                                              child: Center(child: Text('25'))),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          LinearPercentIndicator(
+                                            width: 130,
+                                            lineHeight: 8.0,
+                                            percent: 0.8,
+                                            progressColor: kMainColor,
+                                            backgroundColor: kBorderColor,
+                                            barRadius:
+                                                const Radius.circular(15),
+                                          ),
+                                          const SizedBox(
+                                              width: 30,
+                                              child: Center(child: Text('20'))),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          LinearPercentIndicator(
+                                            width: 130,
+                                            lineHeight: 8.0,
+                                            percent: 0.3,
+                                            progressColor: kMainColor,
+                                            backgroundColor: kBorderColor,
+                                            barRadius:
+                                                const Radius.circular(15),
+                                          ),
+                                          const SizedBox(
+                                              width: 30,
+                                              child: Center(child: Text('10'))),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Icon(Icons.star,
+                                              size: 18, color: kStarColor),
+                                          LinearPercentIndicator(
+                                            width: 130,
+                                            lineHeight: 8.0,
+                                            percent: 0.25,
+                                            progressColor: kMainColor,
+                                            backgroundColor: kBorderColor,
+                                            barRadius:
+                                                const Radius.circular(15),
+                                          ),
+                                          const SizedBox(
+                                              width: 30,
+                                              child: Center(child: Text('6'))),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Container(
+                                width: 330,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(color: kDividerColor),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "Write a Review",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ).onTap(() => _modalBottomSheetMenu()),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              ListView.builder(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: 3,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      height: 120,
+                                      // width: 327,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border:
+                                              Border.all(color: kDividerColor)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  height: 40,
+                                                  width: 40,
+                                                  decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      image: DecorationImage(
+                                                          image: AssetImage(
+                                                              "assets/images/person.png"))),
+                                                ),
+                                                SizedBox(
+                                                  width: 15,
+                                                ),
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Abdul Korim',
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        RatingBarWidget(
+                                                            rating: 4,
+                                                            itemCount: 5,
+                                                            size: 16,
+                                                            activeColor:
+                                                                kStarColor,
+                                                            inActiveColor:
+                                                                kStarColor,
+                                                            onRatingChanged:
+                                                                (value) {
+                                                              setState(() {
+                                                                value = rating;
+                                                              });
+                                                            }),
+                                                        SizedBox(
+                                                          width: 90,
+                                                        ),
+                                                        Text(
+                                                          "5, June 2022",
+                                                          style: TextStyle(
+                                                              color:
+                                                                  kSubTitleColor),
+                                                        )
+                                                      ],
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              comment,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  color: kSubTitleColor),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              )
                             ],
                           )
                         ],
@@ -601,7 +1037,7 @@ class _DetailsRestaurantState extends State<DetailsRestaurant> {
                                                       ],
                                                     ),
                                                   ),
-                                                ),
+                                                ).onTap(()=>ItemDtailsScreen().launch(context)),
                                                 SizedBox(
                                                   height: 8,
                                                 ),
@@ -835,7 +1271,38 @@ class _DetailsRestaurantState extends State<DetailsRestaurant> {
                                     }),
                               ],
                             );
-                          })
+                          }),
+                      SizedBox(height: 10,),
+                      Container(
+                        padding:
+                        EdgeInsets.all(8.0),
+                        width: context.width(),
+                        height: 50,
+                        decoration:
+                        BoxDecoration(
+                          color: kMainColor,
+                          border: Border.all(
+                              color:
+                              kMainColor),
+                          borderRadius:
+                          BorderRadius
+                              .circular(
+                              8.0),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'View your cart (2 Items)',
+                              style: TextStyle(
+                                  color:
+                                  Colors.white,fontWeight: FontWeight.w700),
+                            ),
+                            Text("\$5.50",style: TextStyle(color: Colors.white),)
+                          ],
+                        ),
+                      )
+
                     ])),
           ],
         )))));
