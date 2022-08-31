@@ -3,6 +3,7 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../const/const.dart';
+// ignore_for_file: prefer_const_constructors
 
 class ItemDtailsScreen extends StatefulWidget {
   const ItemDtailsScreen({Key? key}) : super(key: key);
@@ -12,10 +13,12 @@ class ItemDtailsScreen extends StatefulWidget {
 }
 
 class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
+  bool _checkboxListTile = false;
+  bool val= false;
   @override
   Widget build(BuildContext context) {
-    bool _checkbox = false;
-    bool _checkboxListTile = false;
+
+
 
     return SafeArea(
       child: Scaffold(
@@ -32,31 +35,27 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   fit: BoxFit.cover),
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 20.0, left: 24, right: 24),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    height: 30,
-                    width: 30,
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.white),
+                        shape: BoxShape.circle, color: kCircleContainer),
                     child: Icon(
                       FeatherIcons.arrowLeft,
                       color: Colors.black,
-                      size: 20,
                     ),
-                  ),
+                  ).onTap(()=>Navigator.pop(context)),
                   Container(
-                    height: 30,
-                    width: 30,
+                   padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.white),
+                        shape: BoxShape.circle, color:kCircleContainer),
                     child: Icon(
                       FeatherIcons.heart,
                       color: kMainColor,
-                      size: 20,
                     ),
                   ),
                 ],
@@ -70,7 +69,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
               children: [
                 Text(
                   "Chicken burger first delivery",
-                  style: TextStyle(fontWeight: FontWeight.w600),
+                  style: TextStyle(fontWeight: FontWeight.w600,color: kTitleColor),
                 ),
                 SizedBox(
                   height: 10,
@@ -102,7 +101,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   children: [
                     Text(
                       "Variation",
-                      style: TextStyle(fontWeight: FontWeight.w600),
+                      style: TextStyle(fontWeight: FontWeight.w600,color: kTitleColor),
                     ),
                     Container(
                       height: 25,
@@ -121,14 +120,15 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                 CheckboxListTile(
                   controlAffinity: ListTileControlAffinity.leading,
                   contentPadding: EdgeInsets.zero,
+                  activeColor: kMainColor,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [Text('Regular'), Text('Free')],
                   ),
                   value: _checkboxListTile,
-                  onChanged: (value) {
+                  onChanged: ( value) {
                     setState(() {
-                      _checkboxListTile = !_checkboxListTile;
+                      _checkboxListTile = value!;
                     });
                   },
                 ),
@@ -142,7 +142,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   value: _checkboxListTile,
                   onChanged: (value) {
                     setState(() {
-                      _checkboxListTile = !_checkboxListTile;
+                      _checkboxListTile = value!;
                     });
                   },
                 ),
@@ -153,7 +153,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [Text('Extra Spicy'), Text('Free')],
                   ),
-                  value: _checkboxListTile,
+                  value: val,
                   onChanged: (value) {
                     setState(() {
                       _checkboxListTile = !_checkboxListTile;
@@ -168,7 +168,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   children: [
                     Text(
                       "Add ons for burger",
-                      style: TextStyle(fontWeight: FontWeight.w600),
+                      style: TextStyle(fontWeight: FontWeight.w600,color: kTitleColor),
                     ),
                     Container(
                       height: 25,
@@ -233,16 +233,16 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [Text('BBQ Sauce'), Text('+ \$.50')],
                   ),
-                  value: _checkboxListTile,
+                  value: val,
                   onChanged: (value) {
                     setState(() {
-                      _checkboxListTile = !_checkboxListTile;
+                      val = value!;
                     });
                   },
                 ),
                 Text(
                   "Special instructions",
-                  style: TextStyle(fontWeight: FontWeight.w600),
+                  style: TextStyle(fontWeight: FontWeight.w600,color: kTitleColor),
                 ),
                 SizedBox(
                   height: 10,
@@ -261,7 +261,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                       hintText: "enter your need...",
                       contentPadding: EdgeInsets.only(bottom: 20, left: 10),
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: kBorderColor),
+                          borderSide: BorderSide(color: kDividerColor),
                           borderRadius: BorderRadius.circular(10.0))),
                 ),
                 SizedBox(
@@ -301,7 +301,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                             'Add To bag',
                             style: TextStyle(
                                 color:
-                                Colors.white,fontWeight: FontWeight.w700),
+                                kCircleContainer,fontWeight: FontWeight.w700),
                           )),
                     )
                   ],

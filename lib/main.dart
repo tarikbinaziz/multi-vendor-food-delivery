@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme:
             GoogleFonts.dmSansTextTheme(Theme.of(context).textTheme.apply()),
+
       ),
       home: SplashScreen(),
     );
