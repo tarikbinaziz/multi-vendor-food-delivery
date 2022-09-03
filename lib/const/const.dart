@@ -18,6 +18,9 @@ const kTruckColor=Color(0xFF12B289);
 const kDividerColor= Color(0xFFDEDEE0);
 const kContainerBorderColor= Color(0xFFFBA06A);
 const kBorderColor = Color(0xFFB9BBC8);
+const kVerticalDivider= Color(0xFFD5D5D5);
+const kShadowContainerColor= Color(0xFF473232);
+const kShadowSecondColor= Color(0xFF0C1A4B);
 
 
 

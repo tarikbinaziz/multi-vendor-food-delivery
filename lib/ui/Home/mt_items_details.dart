@@ -18,8 +18,6 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
   @override
   Widget build(BuildContext context) {
 
-
-
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
