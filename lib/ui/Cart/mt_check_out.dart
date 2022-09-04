@@ -5,6 +5,8 @@ import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/Cart/mt_shipping_address.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import 'mt_payment_method.dart';
+
 class CheckOutScreen extends StatefulWidget {
   const CheckOutScreen({Key? key}) : super(key: key);
 
@@ -94,7 +96,9 @@ class CheckOutScreenState extends State<CheckOutScreen> {
                       )
                     ],
                   ),
-                ),
+                ).onTap((){
+                  ShippingAddress().launch(context);
+                }),
                 SizedBox(
                   height: 20,
                 ),
@@ -298,7 +302,7 @@ class CheckOutScreenState extends State<CheckOutScreen> {
                       "Swipe To Pay",
                       style: TextStyle(color: kCircleContainer),
                     ))).onTap((){
-                      ShippingAddress().launch(context);
+                  PaymentMethodScreen().launch(context);
                 })
               ],
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
+import 'package:multivendor_food_delivery_app/ui/widgets/mt_textField.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ShippingAddress extends StatefulWidget {
@@ -15,12 +17,13 @@ class _ShippingAddressState extends State<ShippingAddress> {
 
   void _showModalBottomSheet() {
     showModalBottomSheet(
+        isScrollControlled: true,
         context: context,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         builder: (builder) {
           return Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding:  EdgeInsets.only(left: 10.0,right: 10,top: 10,bottom: MediaQuery.of(context).viewInsets.bottom),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -29,7 +32,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                       topRight: const Radius.circular(10.0))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-               // mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,7 +44,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                           color: kTitleColor,
                         ),
                       ),
-                     // Spacer(),
+                      // Spacer(),
                       TextButton(
                           onPressed: () => finish(context),
                           child: Icon(
@@ -54,8 +57,128 @@ class _ShippingAddressState extends State<ShippingAddress> {
                     thickness: 1,
                     color: kDividerColor,
                   ),
-                  Text("Delivey Details",style: TextStyle(color: kTitleColor),),
-                  
+                  Text(
+                    "Delivey Details",
+                    style: TextStyle(color: kTitleColor),
+                  ),
+                  SizedBox(height: 20,),
+                  Row(
+                    children: [
+                       Icon(
+                          FeatherIcons.mapPin,
+                          size: 16,
+                          color: kTruckColor,
+                        ),
+                         SizedBox(width: 20,),
+                         Text(
+                          "New York",
+                          style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),
+                        ),
+                       Spacer(),
+                       Icon(
+                          FeatherIcons.edit,
+                          size: 16,
+                          color: kMainColor,
+                        ),
+
+                    ],
+                  ),
+                  SizedBox(height: 20,),
+                  Text(
+                    "We’re Missing Your Street",
+                    style: TextStyle(
+                        color: kTitleColor, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextField("Enter your location", Text("Street")),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextField("Enter your apartment", Text("Apartment")),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextField("Enter your apartment", Text("(Optional) Floor or Apt No")),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text("Add a Label",style: TextStyle(color: kTitleColor),),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(children: [
+                    Column(
+                      children: [
+                        Container(
+                         padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: kMainColor.withOpacity(0.10),
+                          ),
+                          child: Icon(IconlyBold.home,color: kMainColor,),
+                        ),
+
+              Text("Home",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
+                      ],
+                    ),
+                    SizedBox(width: 20,),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: kTruckColor.withOpacity(0.10),
+                          ),
+                          child: Icon(IconlyBold.work,color: kTruckColor,),
+                        ),Text("Work",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
+                      ],
+                    ), SizedBox(width: 20,),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: kContainerLevelColor.withOpacity(0.10),
+                          ),
+                          child: Icon(IconlyBold.user3,color: kContainerLevelColor,),
+                        ),Text("Partner",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
+                      ],
+                    ), SizedBox(width: 20,),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: kContainerlevelAddColor.withOpacity(0.10),
+                          ),
+                          child: Icon(IconlyBold.plus,color: kContainerlevelAddColor,),
+                        ),Text("Other",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
+                      ],
+                    ),
+                  ],),
+                  SizedBox(height: 20,),
+                  Container(
+                      padding: EdgeInsets.all(8.0),
+                      width: context.width(),
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: kMainColor,
+                        border: Border.all(color: kMainColor),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Center(
+                          child: Text(
+                            "Save",
+                            style: TextStyle(color: kCircleContainer),
+                          ))).onTap(() {
+
+                  }),
+                  SizedBox(height: 10,),
                 ],
               ),
             ),
@@ -131,7 +254,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                           CheckboxListTile(
                             contentPadding: EdgeInsets.all(0),
                             controlAffinity: ListTileControlAffinity.leading,
-                           // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                            // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                             activeColor: kMainColor,
                             title: Text(
                               "Use as the shipping address",
