@@ -4,6 +4,7 @@ import 'package:multivendor_food_delivery_app/ui/Home/mt_details_your_restuarant
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../const/const.dart';
+import 'mt_search_restaurant.dart';
 
 class FindYourResturant extends StatefulWidget {
   const FindYourResturant({Key? key}) : super(key: key);
@@ -78,6 +79,9 @@ class _FindYourResturantState extends State<FindYourResturant> {
               children: [
                 TextField(
                   controller: textEditingController,
+                  onTap: (){
+                    SearchRestaurant().launch(context);
+                  },
                   decoration: InputDecoration(
                       prefixIcon: Icon(FeatherIcons.search),
                       hintText: 'Search restaurant...',

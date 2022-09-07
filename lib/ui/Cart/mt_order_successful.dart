@@ -3,6 +3,8 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import 'mt_order_truck.dart';
+
 class OrderSuccessfulScreen extends StatefulWidget {
   const OrderSuccessfulScreen({Key? key}) : super(key: key);
 
@@ -15,32 +17,13 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: BackButton(color: Colors.black),
-        elevation: 0,
-        title: Text(
-          "Your Order Successfully!",
-          style: TextStyle(color: kTitleColor),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              FeatherIcons.xCircle,
-              color: kSubTitleColor,
-            ),
-            alignment: Alignment(2, 0),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              FeatherIcons.crosshair,
-              color: kTitleColor,
-            ),
-          ),
-          //  IconButton(onPressed: () {  },icon: Icon(FeatherIcons.xCircle,color: kSubTitleColor,),),
-        ],
-      ),
+          backgroundColor: Colors.white,
+          leading: BackButton(color: Colors.black),
+          elevation: 0,
+          title: Text(
+            "Your Order Successfully!",
+            style: TextStyle(color: kTitleColor),
+          )),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(children: [
@@ -81,7 +64,9 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
               style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w700),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -93,7 +78,9 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
                       color: kTitleColor, fontWeight: FontWeight.w400)),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -105,7 +92,9 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
                       color: kTitleColor, fontWeight: FontWeight.w400)),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,18 +107,22 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
               //     style: TextStyle(
               //         color: kTitleColor, fontWeight: FontWeight.w400)),
               RichText(
-                textAlign: TextAlign.end,
+                  textAlign: TextAlign.end,
                   text: TextSpan(
-                text: "Home",style: TextStyle(color: kTitleColor),
-                children: [
-                  TextSpan(
-                  text: "\nNew York, NY 10001-4374\nRoad NO: 17, Floor 27",style: TextStyle(color: kSubTitleColor),)
-
-                ]
-              ))
+                      text: "Home",
+                      style: TextStyle(color: kTitleColor),
+                      children: [
+                        TextSpan(
+                          text:
+                              "\nNew York, NY 10001-4374\nRoad NO: 17, Floor 27",
+                          style: TextStyle(color: kSubTitleColor),
+                        )
+                      ]))
             ],
           ),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -141,7 +134,9 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
                       color: kTitleColor, fontWeight: FontWeight.w400)),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Divider(
             thickness: 1,
             color: kDividerColor,
@@ -152,25 +147,35 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
               RichText(
                   textAlign: TextAlign.end,
                   text: TextSpan(
-                      text: "View Details ",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w500),
+                      text: "View Details ",
+                      style: TextStyle(
+                          color: kTitleColor, fontWeight: FontWeight.w500),
                       children: [
                         TextSpan(
-                          text: "(3 items)",style: TextStyle(color: kSubTitleColor,fontWeight: FontWeight.w400),)
-
-                      ]
-                  )),
+                          text: "(3 items)",
+                          style: TextStyle(
+                              color: kSubTitleColor,
+                              fontWeight: FontWeight.w400),
+                        )
+                      ])),
               Text("\$13.59",
                   style: TextStyle(
                       color: kTitleColor, fontWeight: FontWeight.w400)),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Divider(
             thickness: 1,
             color: kDividerColor,
           ),
-          SizedBox(height: 10,),
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            height: 30,
+          ),
           Container(
               padding: EdgeInsets.all(8.0),
               width: context.width(),
@@ -182,11 +187,13 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
               ),
               child: Center(
                   child: Text(
-                    "Track your order",
-                    style: TextStyle(color: kCircleContainer,fontWeight: FontWeight.w700),
-                  ))),
-        ]
-        ),
+                "Track your order",
+                style: TextStyle(
+                    color: kCircleContainer, fontWeight: FontWeight.w700),
+              ))).onTap(() {
+            TrackOrderScreen().launch(context);
+          }),
+        ]),
       ),
     );
   }

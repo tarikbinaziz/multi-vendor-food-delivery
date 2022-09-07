@@ -24,6 +24,8 @@ const kShadowSecondColor= Color(0xFF0C1A4B);
 const kLebelColor= Color(0xFF1A1A1A);
 const kContainerLevelColor= Color(0xFF7879F1);
 const kContainerlevelAddColor= Color(0xFF0BBB07);
+const kTrackContainerColor= Color(0xFF12B389);
+const kContainerManColor= Color(0xFFFFE3DA);
 
 
 

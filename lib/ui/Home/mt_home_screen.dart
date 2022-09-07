@@ -5,6 +5,7 @@ import '../../const/const.dart';
 import '../views/Location/mt_add_new_address.dart';
 import 'mt_details_your_restuarant.dart';
 import 'mt_find_your_resturant.dart';
+import 'mt_offer.dart';
 
 class MTHomeScreen extends StatefulWidget {
   const MTHomeScreen({Key? key}) : super(key: key);
@@ -342,7 +343,9 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                             ),
                           )
                         ],
-                      ),
+                      ).onTap((){
+                        OfferFoodScreen().launch(context);
+                      }),
                     ),
                   ),
                 ],
