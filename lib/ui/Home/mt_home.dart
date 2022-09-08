@@ -6,6 +6,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:multivendor_food_delivery_app/ui/Cart/mt_cart.dart';
 import 'package:multivendor_food_delivery_app/ui/Favourites/mt_favourites.dart';
 import 'package:multivendor_food_delivery_app/ui/Home/mt_home_screen.dart';
+import 'package:multivendor_food_delivery_app/ui/My%20Order/mt_my_order.dart';
 import '../../const/const.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [MTHomeScreen(), FavouritesScreen(), CartScreen(),MTHomeScreen(),MTHomeScreen()];
+  final List<Widget> _pages = [MTHomeScreen(), FavouritesScreen(), CartScreen(),MyOrderScreen(),MyOrderScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(
                   _currentIndex == 3 ? IconlyBold.document :IconlyLight.document,
                 ),
-                label: "documnets"),
+                label: ""),
             BottomNavigationBarItem(
                 icon: Icon(
                   _currentIndex == 4 ? IconlyBold.profile :IconlyLight.profile,

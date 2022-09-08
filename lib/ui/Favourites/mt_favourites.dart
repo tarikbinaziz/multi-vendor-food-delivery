@@ -102,12 +102,12 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                         context: context,
                                         builder: (builder) {
                                           return AlertDialog(
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                                             content: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Container(
-                                                  height: 100,
-                                                  width: 140,
+                                                  width: context.width()/3,height: context.width()/3.8,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -128,19 +128,20 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                                       color: kTitleColor),
                                                 ),
                                                 Text(
-                                                  "Remove Salad with herb spices 50g ",
+                                                  "Remove Salad with herb spices\n50g ",
+                                                  textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w400,
                                                       color: kSubTitleColor),
                                                 ),
-                                                SizedBox(height: 20,),
+                                                SizedBox(height: 30,),
                                                 Row(
                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: [
                                                     Container(
-                                                        height: 50,
-                                                        width: 120,
+                                                      width: context.width()/3.5,
+                                                        padding: EdgeInsets.all(10),
                                                         decoration:
                                                             BoxDecoration(
                                                           border: Border.all(
@@ -159,12 +160,11 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w700),
-                                                        ))),
+                                                        ))).onTap((){finish(context);}),
+                                                    SizedBox(width: 20,),
                                                     Container(
-                                                        padding:
-                                                            EdgeInsets.all(8.0),
-                                                        height: 50,
-                                                        width: 120,
+                                                        width: context.width()/3.5,
+                                                        padding: EdgeInsets.all(10),
                                                         decoration:
                                                             BoxDecoration(
                                                           color: kMainColor,
