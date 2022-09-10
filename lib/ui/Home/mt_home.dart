@@ -8,6 +8,7 @@ import 'package:multivendor_food_delivery_app/ui/Favourites/mt_favourites.dart';
 import 'package:multivendor_food_delivery_app/ui/Home/mt_home_screen.dart';
 import 'package:multivendor_food_delivery_app/ui/My%20Order/mt_my_order.dart';
 import '../../const/const.dart';
+import '../Profile/mt_profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [MTHomeScreen(), FavouritesScreen(), CartScreen(),MyOrderScreen(),MyOrderScreen()];
+  final List<Widget> _pages = [MTHomeScreen(), FavouritesScreen(), CartScreen(),MyOrderScreen(),ProfileScreen ()];
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(
                   _currentIndex == 4 ? IconlyBold.profile :IconlyLight.profile,
                 ),
-                label: "user"),
+                label: ""),
           ],
         ),
       ),

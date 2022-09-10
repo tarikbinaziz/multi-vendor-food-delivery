@@ -9,121 +9,128 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.white,
-            elevation: 0,
-            title: Text(
-              "Sign In",
-              style: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
-            ),
-          ),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 24.0, right: 24, top: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      "assets/logo/logo.png",
-                      height: 160,
-                    ),
+    return Scaffold(
+      appBar: AppBar(
+    automaticallyImplyLeading: false,
+    backgroundColor: Colors.white,
+    elevation: 0,
+    title: Text(
+      "Sign In",
+      style: TextStyle(
+          fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
+    ),
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: SizedBox(
+          height: context.height()/2,
+          child: Column(
+           mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  "assets/logo/logo.png",
+                  height: 160,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Email Address ",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+              AppTextField(
+                decoration: InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFFDEDEE0))),
+                    hintText: "Enter your Email  ",
+                    hintStyle: TextStyle(color: kSubTitleColor),
+                    prefixIcon: Icon(
+                      FeatherIcons.user,
+                      color: kMainColor,
+                    )),
+                textFieldType: TextFieldType.EMAIL,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Password",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+              AppTextField(
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFDEDEE0))),
+                  hintText: "Enter your  password",
+                  hintStyle: TextStyle(color: kSubTitleColor),
+                  prefixIcon: Icon(
+                    FeatherIcons.lock,
+                    color: kMainColor,
                   ),
-                  SizedBox(
-                    height: 20,
+                ),
+                textFieldType: TextFieldType.PASSWORD,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ForgotPasswordScreen()));
+                  },
+                  child: Text(
+                    "Forgot Password",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: kSubTitleColor),
                   ),
-                  Text(
-                    "Email Address ",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  ),
-                  AppTextField(
-                    decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFDEDEE0))),
-                        hintText: "Enter your Email  ",
-                        hintStyle: TextStyle(color: kSubTitleColor),
-                        prefixIcon: Icon(
-                          FeatherIcons.user,
-                          color: kMainColor,
-                        )), textFieldType: TextFieldType.EMAIL,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Password",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  ),
-                  AppTextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFDEDEE0))),
-                      hintText: "Enter your  password",
-                      hintStyle: TextStyle(color: kSubTitleColor),
-                      prefixIcon: Icon(
-                        FeatherIcons.lock,
-                        color: kMainColor,
-                      ),
-                    ), textFieldType: TextFieldType.PASSWORD,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=> ForgotPasswordScreen()));
-                      },
-
-                      child: Text(
-                        "Forgot Password",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500,color: kSubTitleColor),
-                      ),
-                    ),
-                  ),
-
-                  SizedBox(
-                    height: 15,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text("Sign In"),
-                    style: ElevatedButton.styleFrom(
-                        primary: kMainColor, minimumSize: Size(372, 50)),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Center(
-                    child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                            text: "or ",
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Sign In"),
+                style: ElevatedButton.styleFrom(
+                    primary: kMainColor, minimumSize: Size(372, 50)),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Center(
+                child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                        text: "or ",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: kSubTitleColor),
+                        children: [
+                          TextSpan(
+                            text: "Register a new account",
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
-                                color: kSubTitleColor),
-                            children: [
-                              TextSpan(
-                                text: "Register a new account",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black),
-                              ),
-                            ])),
-                  )
-                ],
-              ),
-            ),
+                                color: Colors.black),
+                          ),
+                        ])),
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

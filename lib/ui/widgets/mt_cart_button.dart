@@ -6,7 +6,8 @@ import '../../const/const.dart';
 class CartButton extends StatelessWidget {
 
   String text;
-  CartButton(this.text);
+
+  CartButton(this.text,);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class CartButton extends StatelessWidget {
         child: Center(
             child: Text(
               text,
-              style: TextStyle(color: kCircleContainer),
+              style: TextStyle(color: kCircleContainer,fontWeight:FontWeight.w700 ),
             )));
   }
 }

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:multivendor_food_delivery_app/ui/widgets/mt_cart_button.dart';
 import 'package:nb_utils/nb_utils.dart';
-
 import '../../const/const.dart';
 
 class FavouritesScreen extends StatefulWidget {
