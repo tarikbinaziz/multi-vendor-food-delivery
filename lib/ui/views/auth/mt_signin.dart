@@ -9,23 +9,21 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-    automaticallyImplyLeading: false,
-    backgroundColor: Colors.white,
-    elevation: 0,
-    title: Text(
-      "Sign In",
-      style: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
-    ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor: Colors.white,
+      elevation: 0,
+      title: Text(
+        "Sign In",
+        style: TextStyle(
+            fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: SizedBox(
-          height: context.height()/2,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
           child: Column(
-           mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,7 +39,7 @@ class SignInScreen extends StatelessWidget {
               ),
               Text(
                 "Email Address ",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle( fontWeight: FontWeight.w500,color: kTitleColor),
               ),
               AppTextField(
                 decoration: InputDecoration(
@@ -60,7 +58,7 @@ class SignInScreen extends StatelessWidget {
               ),
               Text(
                 "Password",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(fontWeight: FontWeight.w500,color: kTitleColor),
               ),
               AppTextField(
                 decoration: InputDecoration(
@@ -90,23 +88,23 @@ class SignInScreen extends StatelessWidget {
                   child: Text(
                     "Forgot Password",
                     style: TextStyle(
-                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: kSubTitleColor),
                   ),
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 30,
               ),
+
               ElevatedButton(
                 onPressed: () {},
-                child: Text("Sign In"),
+                child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.w700,color: kCircleContainer),),
                 style: ElevatedButton.styleFrom(
-                    primary: kMainColor, minimumSize: Size(372, 50)),
+                    primary: kMainColor, minimumSize: Size(double.infinity, 50)),
               ),
               SizedBox(
-                height: 15,
+                height: 10,
               ),
               Center(
                 child: RichText(
@@ -114,16 +112,15 @@ class SignInScreen extends StatelessWidget {
                     text: TextSpan(
                         text: "or ",
                         style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w400,
                             color: kSubTitleColor),
                         children: [
                           TextSpan(
                             text: "Register a new account",
                             style: TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black),
+                                fontWeight: FontWeight.w400,
+                                color: kTitleColor),
                           ),
                         ])),
               )
