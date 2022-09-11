@@ -6,6 +6,7 @@ import 'package:multivendor_food_delivery_app/ui/Profile/mt_about_us.dart';
 import 'package:multivendor_food_delivery_app/ui/Profile/mt_my_profile.dart';
 import 'package:multivendor_food_delivery_app/ui/Profile/mt_notification.dart';
 import 'package:multivendor_food_delivery_app/ui/Profile/mt_privacy_policy.dart';
+import 'package:multivendor_food_delivery_app/ui/Profile/mt_support.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../const/const.dart';
@@ -202,7 +203,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 trailing: Icon(
                   IconlyLight.arrowRight2,
                   color: kTitleColor,
-                ),
+                ).onTap((){SupportScreen().launch(context);}),
               ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
