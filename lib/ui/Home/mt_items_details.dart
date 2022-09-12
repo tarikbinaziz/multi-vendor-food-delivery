@@ -189,7 +189,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   activeColor: kMainColor,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Regular'), Text('Free')],
+                    children: const [Text('Regular'), Text('Free')],
                   ),
                   value: _checkboxListTile,
                   onChanged: ( value) {
@@ -203,7 +203,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Spicy'), Text('Free')],
+                    children: const [Text('Spicy'), Text('Free')],
                   ),
                   value: _checkboxListTile,
                   onChanged: (value) {
@@ -217,7 +217,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Extra Spicy'), Text('Free')],
+                    children: const [Text('Extra Spicy'), Text('Free')],
                   ),
                   value: val,
                   onChanged: (value) {
@@ -255,7 +255,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Cheese'), Text('+ \$.50')],
+                    children: const [Text('Cheese'), Text('+ \$.50')],
                   ),
                   value: _checkboxListTile,
                   onChanged: (value) {
@@ -269,7 +269,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Burger Sauce'), Text('+ \$.30')],
+                    children: const [Text('Burger Sauce'), Text('+ \$.30')],
                   ),
                   value: _checkboxListTile,
                   onChanged: (value) {
@@ -283,7 +283,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Chicken Patty'), Text('+ \$.70')],
+                    children: const [Text('Chicken Patty'), Text('+ \$.70')],
                   ),
                   value: _checkboxListTile,
                   onChanged: (value) {
@@ -297,7 +297,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('BBQ Sauce'), Text('+ \$.50')],
+                    children: const [Text('BBQ Sauce'), Text('+ \$.50')],
                   ),
                   value: val,
                   onChanged: (value) {

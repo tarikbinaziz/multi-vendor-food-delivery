@@ -80,7 +80,7 @@ class SignInScreen extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => ForgotPasswordScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => const ForgotPasswordScreen()));
                   },
                   child: const Text(
                     "Forgot Password?",

@@ -13,13 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Food Grid',
       theme: ThemeData(
         textTheme:
             GoogleFonts.dmSansTextTheme(Theme.of(context).textTheme.apply()),
 
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

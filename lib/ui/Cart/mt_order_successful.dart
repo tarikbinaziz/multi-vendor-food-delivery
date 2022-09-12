@@ -166,6 +166,7 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
                     itemCount: 3,
                     itemBuilder: (_, i) {
                       return Container(
+                        margin: const EdgeInsets.all(8.0),
                         width: context.width(),
                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(6), border: Border.all(color: kDividerColor)),
                         child: Padding(
@@ -195,8 +196,8 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
                                           "\$3.59",
                                           style: TextStyle(color: kSubTitleColor),
                                         ),
-                                        const SizedBox(
-                                          width: 10,
+                                        SizedBox(
+                                          width: context.width()/2.5,
                                         ),
                                         RichText(
                                           text: const TextSpan(

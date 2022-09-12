@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:multivendor_food_delivery_app/ui/Home/mt_home.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../const/const.dart';
-import 'mt_confirm_location.dart';
 
 class EnterLocation extends StatefulWidget {
-  EnterLocation({Key? key}) : super(key: key);
+  const EnterLocation({Key? key}) : super(key: key);
 
   @override
   State<EnterLocation> createState() => _EnterLocationState();
@@ -17,6 +15,7 @@ class EnterLocation extends StatefulWidget {
 class _EnterLocationState extends State<EnterLocation> {
   TextEditingController textEditingController = TextEditingController();
   GoogleMapController? mapController; //contrller for Google map
+  // ignore: prefer_collection_literals
   Set<Marker> markers = Set(); //markers for google map
   LatLng showLocation = const LatLng(27.7089427, 85.3086209);
 
@@ -54,7 +53,7 @@ class _EnterLocationState extends State<EnterLocation> {
               child: Center(
                 child: TextField(controller: textEditingController,
                   decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 4.0),
+                    contentPadding: const EdgeInsets.only(left: 4.0),
                       suffixIcon: IconButton(
                         icon: const Icon(FeatherIcons.crosshair,),
                         onPressed: () {

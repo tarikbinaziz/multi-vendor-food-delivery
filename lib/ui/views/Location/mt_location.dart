@@ -15,6 +15,7 @@ class LocationScreen extends StatefulWidget {
 class _LocationScreenState extends State<LocationScreen> {
 
   GoogleMapController? mapController; //contrller for Google map
+  // ignore: prefer_collection_literals
   Set<Marker> markers = Set(); //markers for google map
   LatLng showLocation = const LatLng(27.7089427, 85.3086209);
 
@@ -73,46 +74,46 @@ class _LocationScreenState extends State<LocationScreen> {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: [
-                        Text(
+                        const Text(
                           "Find Restaurants and Store Near You!",
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500, color: Colors.black),
                         ),
-                        Text(
+                        const Text(
                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec, sed volutpatturpis. Purus elementum",
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: kSubTitleColor),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeScreen()));
                           },
-                          child: Text("Allow Location Access"),
                           style: ElevatedButton.styleFrom(
                             primary: kMainColor,
-                            minimumSize: Size(372, 50),
+                            minimumSize: const Size(372, 50),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                           ),
+                          child: const Text("Allow Location Access"),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => EnterLocation()));
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => const EnterLocation()));
                           },
-                          child: Text(
+                          style: ElevatedButton.styleFrom(
+                            side: const BorderSide(color: kSubTitleColor, width: 2),
+                            primary: Colors.white,
+                            minimumSize: const Size(372, 50),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                          ),
+                          child: const Text(
                             "Enter My Location",
                             style: TextStyle(color: Colors.black),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            side: BorderSide(color: kSubTitleColor, width: 2),
-                            primary: Colors.white,
-                            minimumSize: Size(372, 50),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                           ),
                         )
                       ],

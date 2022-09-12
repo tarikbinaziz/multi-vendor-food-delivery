@@ -3,15 +3,16 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../../const/const.dart';
 
+// ignore: must_be_immutable
 class CartButton extends StatelessWidget {
-
   String text;
-  CartButton(this.text);
+
+  CartButton(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         width: context.width(),
         height: 50,
         decoration: BoxDecoration(
@@ -21,8 +22,8 @@ class CartButton extends StatelessWidget {
         ),
         child: Center(
             child: Text(
-              text,
-              style: TextStyle(color: kCircleContainer),
-            )));
+          text,
+          style: const TextStyle(color: kCircleContainer),
+        )));
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../views/onbording/mt_on_boarding.dart';
@@ -17,9 +18,9 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        const Duration(seconds: 3),
         () => Navigator.push(
-            context, MaterialPageRoute(builder: (_) => OnBoardingScreen())));
+            context, MaterialPageRoute(builder: (_) => const OnBoardingScreen())));
   }
 
   @override

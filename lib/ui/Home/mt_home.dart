@@ -7,7 +7,9 @@ import 'package:multivendor_food_delivery_app/ui/Cart/mt_cart.dart';
 import 'package:multivendor_food_delivery_app/ui/Favourites/mt_favourites.dart';
 import 'package:multivendor_food_delivery_app/ui/Home/mt_home_screen.dart';
 import 'package:multivendor_food_delivery_app/ui/My%20Order/mt_my_order.dart';
+
 import '../../const/const.dart';
+import '../Profile/mt_profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [const MTHomeScreen(), const FavouritesScreen(), const CartScreen(),const MyOrderScreen(),const MyOrderScreen()];
+  final List<Widget> _pages = [const MTHomeScreen(), const FavouritesScreen(), const CartScreen(),const MyOrderScreen(),const ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -57,15 +59,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Container(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: kMainColor,
                   ),
                   child: Badge(
                       borderRadius: BorderRadius.circular(20.0),
-                      badgeContent: Text('3',style: TextStyle(color: Colors.white),),
-                      borderSide: BorderSide(color: Colors.white),
-                      child: Icon(
+                      badgeContent: const Text('3',style: TextStyle(color: Colors.white),),
+                      borderSide: const BorderSide(color: Colors.white),
+                      child: const Icon(
                         FeatherIcons.shoppingBag,
                         color: Colors.white,
                       )),

@@ -43,7 +43,8 @@ class WelcomeScreen extends StatelessWidget {
                       size: 15,
                     ),
                     "Continue with Google",
-                    kButtonFBGColor,kTitleColor,
+                    kButtonFBGColor,
+                    kTitleColor,
                     () {}),
                 const SizedBox(
                   height: 8,
@@ -55,7 +56,8 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                     "Continue with Facebook",
-                    kButtonSBGColor,Colors.white,
+                    kButtonSBGColor,
+                    Colors.white,
                     () {}),
                 const SizedBox(
                   height: 8,
@@ -66,9 +68,9 @@ class WelcomeScreen extends StatelessWidget {
                       size: 20,
                     ),
                     "Continue with Phone",
-                    kButtonFBGColor,kTitleColor, () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => const PhoneAuth()));
+                    kButtonFBGColor,
+                    kTitleColor, () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const PhoneAuth()));
                 }),
                 const SizedBox(
                   height: 8,
@@ -79,34 +81,38 @@ class WelcomeScreen extends StatelessWidget {
                       size: 20,
                     ),
                     "Continue with Email",
-                    kButtonFBGColor,kTitleColor,
-                    () =>  Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => const SignInScreen()))),
+                    kButtonFBGColor,
+                    kTitleColor,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SignInScreen()))),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 44.0, right: 44.0),
             child: RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                    text: "By continuing, you agree to our ",
+              textAlign: TextAlign.center,
+              text: const TextSpan(
+                text: "By continuing, you agree to our ",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: kSubTitleColor,
+                ),
+                children: [
+                  TextSpan(
+                    text: "Terms & Conditions and privacy policy",
                     style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700,
-                        color: kSubTitleColor),
-                    children: [
-                      TextSpan(
-                        text: "Terms & Conditions and privacy policy",
-                        style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w700,
-                            color: kMainColor),
-                      )
-                    ])),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                      color: kMainColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -18,9 +17,9 @@ class _SearchRestaurantState extends State<SearchRestaurant> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: BackButton(color: Colors.black,),
+        leading: const BackButton(color: Colors.black,),
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Find nearby Resturent',
           style: TextStyle(color: kTitleColor),
         ),
@@ -31,26 +30,26 @@ class _SearchRestaurantState extends State<SearchRestaurant> {
           children: [
             TextField(
               decoration: InputDecoration(
-                  prefixIcon: Icon(FeatherIcons.search),
+                  prefixIcon: const Icon(FeatherIcons.search),
                   hintText: 'Search restaurant...',
                   border: InputBorder.none,
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(color: Colors.transparent))),
+                      borderSide: const BorderSide(color: Colors.transparent))),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(IconlyLight.location,color: kTruckColor,),
               title: Text("18th Street Brewery",style: TextStyle(fontWeight: FontWeight.w400,color: kTitleColor),),
               subtitle: Text("Oakley Avenue, Hammond, IN",style: TextStyle(fontWeight: FontWeight.w400,color: kSubTitleColor),),
             ),
-            Divider(thickness: 1,color: kDividerColor,),
+            const Divider(thickness: 1,color: kDividerColor,),
 
-            ListTile(
+            const ListTile(
               leading: Icon(IconlyLight.location,color: kTruckColor,),
               title: Text("18th Avenue",style: TextStyle(fontWeight: FontWeight.w400,color: kTitleColor),),
               subtitle: Text("Brooklyn, NY",style: TextStyle(fontWeight: FontWeight.w400,color: kSubTitleColor),),
             ),
-            Divider(thickness: 1,color: kDividerColor,),
+            const Divider(thickness: 1,color: kDividerColor,),
           ],
         ),
       ),

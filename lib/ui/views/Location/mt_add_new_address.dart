@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/Home/mt_home.dart';
 
 
+// ignore: must_be_immutable
 class AddNewAddress extends StatelessWidget {
   AddNewAddress({Key? key}) : super(key: key);
   TextEditingController textEditingController=TextEditingController();
@@ -45,15 +45,15 @@ class AddNewAddress extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 30.0, left: 24, right: 24),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_)=> HomeScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> const HomeScreen()));
             },
-            child: Text("Confirm"),
             style: ElevatedButton.styleFrom(
               primary: kMainColor,
-              minimumSize: Size(372, 50),
+              minimumSize: const Size(372, 50),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0)),
             ),
+            child: const Text("Confirm"),
           ),)
       ]
       ),

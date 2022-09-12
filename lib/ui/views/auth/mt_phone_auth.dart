@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/styles/otp_form.dart';
 import 'package:nb_utils/nb_utils.dart';
-
-import 'mt_register.dart';
 
 class PhoneAuth extends StatelessWidget {
   const PhoneAuth({Key? key}) : super(key: key);

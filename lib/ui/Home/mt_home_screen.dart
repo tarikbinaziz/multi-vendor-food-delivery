@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:nb_utils/nb_utils.dart';
+
 import '../../const/const.dart';
-import '../views/Location/mt_add_new_address.dart';
+import '../views/Location/mt_enter_location.dart';
 import '../widgets/mt_horizontal_food_card.dart';
 import 'mt_details_your_restuarant.dart';
 import 'mt_find_your_resturant.dart';
@@ -152,7 +153,7 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => AddNewAddress()));
+                                  builder: (_) => const EnterLocation()));
                         }),
                       ],
                     ),
@@ -343,7 +344,7 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                   child: Column(
                     // mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Find restaurant",
                         style: TextStyle(

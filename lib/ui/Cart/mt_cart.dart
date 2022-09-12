@@ -15,7 +15,6 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   var value = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +33,7 @@ class _CartScreenState extends State<CartScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextField(
@@ -42,21 +41,18 @@ class _CartScreenState extends State<CartScreen> {
                     contentPadding: EdgeInsets.zero,
                     prefixIcon: Image.asset("assets/images/cupon.png"),
                     hintText: "Coupon code",
-                    hintStyle: TextStyle(color: kSubTitleColor),
-                    border: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: kDividerColor, width: 1),
-                        borderRadius: BorderRadius.circular(6.0)),
+                    hintStyle: const TextStyle(color: kSubTitleColor),
+                    border: OutlineInputBorder(borderSide: const BorderSide(color: kDividerColor, width: 1), borderRadius: BorderRadius.circular(6.0)),
                     suffixIcon: Container(
                       width: 100,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.all(20),
+                      decoration: const BoxDecoration(
                           color: kTruckColor,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(6),
                             bottomRight: Radius.circular(6),
                           )),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Apply",
                           style: TextStyle(color: Colors.white),
@@ -64,12 +60,12 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "Total Item",
                     style: TextStyle(color: kSubTitleColor),
@@ -80,12 +76,12 @@ class _CartScreenState extends State<CartScreen> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "Subtotal",
                     style: TextStyle(color: kSubTitleColor),
@@ -96,12 +92,12 @@ class _CartScreenState extends State<CartScreen> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "Delivery Fee",
                     style: TextStyle(color: kSubTitleColor),
@@ -112,12 +108,12 @@ class _CartScreenState extends State<CartScreen> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "VAT",
                     style: TextStyle(color: kSubTitleColor),
@@ -128,52 +124,46 @@ class _CartScreenState extends State<CartScreen> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
               ),
-
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "Total Amount",
-                    style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w500),
+                    style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w500),
                   ),
                   Text(
                     "\$13.59",
-                    style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w500),
+                    style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
-                  padding:
-                  EdgeInsets.all(14.0),
+                  padding: const EdgeInsets.all(14.0),
                   width: context.width(),
                   // height: 50,
-                  decoration:
-                  BoxDecoration(
+                  decoration: BoxDecoration(
                     color: kMainColor,
-                    border: Border.all(
-                        color:
-                        kMainColor),
-                    borderRadius:
-                    BorderRadius
-                        .circular(
-                        8.0),
+                    border: Border.all(color: kMainColor),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  child:
-                  Center(child: Text("Check Out",style: TextStyle(color:kCircleContainer),))
-              ).onTap((){
-                CheckOutScreen().launch(context);
+                  child: const Center(
+                      child: Text(
+                    "Check Out",
+                    style: TextStyle(color: kCircleContainer),
+                  ))).onTap(() {
+                const CheckOutScreen().launch(context);
               })
             ],
           ),
@@ -185,7 +175,7 @@ class _CartScreenState extends State<CartScreen> {
               children: [
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 8,
                   itemBuilder: (BuildContext context, int index) {
                     return Slidable(
@@ -195,24 +185,20 @@ class _CartScreenState extends State<CartScreen> {
                         //   dismissible: DismissiblePane(onDismissed: () => toast('Item Deleted')),
                         children: [
                           Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: kMiniContainerColor.withOpacity(0.1)),
-                            child: Icon(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: kMiniContainerColor.withOpacity(0.1)),
+                            child: const Icon(
                               FeatherIcons.heart,
                               color: kMainColor,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: kMiniContainerColor.withOpacity(0.1)),
-                            child: Icon(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: kMiniContainerColor.withOpacity(0.1)),
+                            child: const Icon(
                               FeatherIcons.trash2,
                               color: kMainColor,
                             ),
@@ -222,19 +208,15 @@ class _CartScreenState extends State<CartScreen> {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 10.0),
                         child: Container(
-                          padding: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              border: Border.all(
-                                  color: kBorderColor.withOpacity(0.4))),
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0), border: Border.all(color: kBorderColor.withOpacity(0.4))),
                           child: Row(children: [
                             Container(
                                 width: 80,
                                 height: 74,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.amberAccent,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(6)),
+                                  borderRadius: BorderRadius.all(Radius.circular(6)),
                                   image: DecorationImage(
                                       image: AssetImage(
                                         "assets/images/bigburger.png",
@@ -248,40 +230,32 @@ class _CartScreenState extends State<CartScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Chicken burger first delivery",
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 4,
                                   ),
                                   Row(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "\$5.00",
-                                        style: TextStyle(
-                                            color: kTruckColor,
-                                            fontWeight: FontWeight.w500),
+                                        style: TextStyle(color: kTruckColor, fontWeight: FontWeight.w500),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 70,
                                       ),
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 25.0),
+                                        padding: const EdgeInsets.only(left: 25.0),
                                         child: Row(
                                           children: [
                                             Container(
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                      color: kButtonFBGColor,
-                                                      width: 1)),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(4.0),
+                                              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: kButtonFBGColor, width: 1)),
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(4.0),
                                                 child: Icon(
                                                   FeatherIcons.minus,
                                                   color: kSubTitleColor,
@@ -292,27 +266,20 @@ class _CartScreenState extends State<CartScreen> {
                                                 value > 1 ? value-- : value = 1;
                                               });
                                             }),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 16,
                                             ),
                                             Text(
                                               value.toString(),
-                                              style: TextStyle(
-                                                  color: kTitleColor,
-                                                  fontWeight: FontWeight.w400),
+                                              style: const TextStyle(color: kTitleColor, fontWeight: FontWeight.w400),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 16,
                                             ),
                                             Container(
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                      color: kDividerColor,
-                                                      width: 1)),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(4.0),
+                                              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: kDividerColor, width: 1)),
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(4.0),
                                                 child: Icon(
                                                   FeatherIcons.plus,
                                                   color: kSubTitleColor,
@@ -328,7 +295,7 @@ class _CartScreenState extends State<CartScreen> {
                                       )
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 4,
                                   ),
                                 ],
@@ -340,7 +307,6 @@ class _CartScreenState extends State<CartScreen> {
                     );
                   },
                 ),
-
               ],
             ),
           ),

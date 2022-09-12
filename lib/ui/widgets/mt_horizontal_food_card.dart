@@ -22,11 +22,8 @@ class HorizontalFoodCard extends StatelessWidget {
             height: 120,
             decoration: const BoxDecoration(
               color: Colors.amberAccent,
-              borderRadius:
-              BorderRadius.all(Radius.circular(6)),
-              image: DecorationImage(
-                  image: AssetImage("assets/images/rst1.png"),
-                  fit: BoxFit.cover),
+              borderRadius: BorderRadius.all(Radius.circular(6)),
+              image: DecorationImage(image: AssetImage("assets/images/rst1.png"), fit: BoxFit.cover),
             ),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -35,18 +32,12 @@ class HorizontalFoodCard extends StatelessWidget {
                   Container(
                     width: 50,
                     height: 20,
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(20)),
-                        color: kMiniContainerColor),
+                    decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(6)), color: kMiniContainerColor),
                     child: const Center(
                         child: Text(
-                          "50 min",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        )),
+                      "50 min",
+                      style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w400),
+                    )),
                   ),
                   Align(
                     alignment: Alignment.topRight,
@@ -54,19 +45,16 @@ class HorizontalFoodCard extends StatelessWidget {
                       width: 20,
                       height: 20,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.white,
-                              width: 0.5),
+                          border: Border.all(color: Colors.white, width: 0.5),
                           //  borderRadius: BorderRadius.all(Radius.circular(20)),
                           shape: BoxShape.circle,
-                          color: kCircleContainer
-                              .withOpacity(0.5)),
+                          color: kCircleContainer.withOpacity(0.5)),
                       child: const Center(
                           child: Icon(
-                            FeatherIcons.heart,
-                            color: Colors.white,
-                            size: 9,
-                          )),
+                        FeatherIcons.heart,
+                        color: Colors.white,
+                        size: 9,
+                      )),
                     ),
                   )
                 ],
@@ -82,7 +70,9 @@ class HorizontalFoodCard extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 5,),
+          const SizedBox(
+            height: 5,
+          ),
           Row(
             children: const [
               Icon(
@@ -96,14 +86,13 @@ class HorizontalFoodCard extends StatelessWidget {
               Text(
                 "1901 Thornridge Cir. Shiloh, Ha...",
                 maxLines: 2,
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    overflow: TextOverflow.ellipsis),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, overflow: TextOverflow.ellipsis),
               ),
             ],
           ),
-          const SizedBox(height: 5,),
+          const SizedBox(
+            height: 5,
+          ),
           Row(
             children: const [
               Icon(
@@ -116,9 +105,7 @@ class HorizontalFoodCard extends StatelessWidget {
               ),
               Text(
                 "Free delivery",
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
               ),
               SizedBox(
                 width: 30,
@@ -133,9 +120,7 @@ class HorizontalFoodCard extends StatelessWidget {
               ),
               Text(
                 "5.0 (100+)",
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
               ),
             ],
           ),
@@ -144,7 +129,6 @@ class HorizontalFoodCard extends StatelessWidget {
     );
   }
 }
-
 
 class HorizontalRestaurantList extends StatelessWidget {
   const HorizontalRestaurantList({
@@ -163,11 +147,8 @@ class HorizontalRestaurantList extends StatelessWidget {
             height: 120,
             decoration: const BoxDecoration(
               color: Colors.amberAccent,
-              borderRadius:
-              BorderRadius.all(Radius.circular(6)),
-              image: DecorationImage(
-                  image: AssetImage("assets/images/resturent.png"),
-                  fit: BoxFit.cover),
+              borderRadius: BorderRadius.all(Radius.circular(6)),
+              image: DecorationImage(image: AssetImage("assets/images/resturent.png"), fit: BoxFit.cover),
             ),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -176,18 +157,12 @@ class HorizontalRestaurantList extends StatelessWidget {
                   Container(
                     width: 50,
                     height: 20,
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(4)),
-                        color: kMiniContainerColor),
+                    decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: kMiniContainerColor),
                     child: const Center(
                         child: Text(
-                          "50 min",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        )),
+                      "50 min",
+                      style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w400),
+                    )),
                   ),
                   Align(
                     alignment: Alignment.topRight,
@@ -195,37 +170,36 @@ class HorizontalRestaurantList extends StatelessWidget {
                       width: 20,
                       height: 20,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.white,
-                              width: 0.5),
+                          border: Border.all(color: Colors.white, width: 0.5),
                           //  borderRadius: BorderRadius.all(Radius.circular(20)),
                           shape: BoxShape.circle,
-                          color: kCircleContainer
-                              .withOpacity(0.5)),
+                          color: kCircleContainer.withOpacity(0.5)),
                       child: const Center(
                           child: Icon(
-                            FeatherIcons.heart,
-                            color: Colors.white,
-                            size: 9,
-                          )),
+                        FeatherIcons.heart,
+                        color: Colors.white,
+                        size: 9,
+                      )),
                     ),
                   )
                 ],
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
-          Text(
+          const Text(
             "Restaurant Name",
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 5,),
+          const SizedBox(
+            height: 5,
+          ),
           Row(
-            children: [
+            children: const [
               Icon(
                 Icons.location_on,
                 size: 14,
@@ -237,16 +211,15 @@ class HorizontalRestaurantList extends StatelessWidget {
               Text(
                 "1901 Thornridge Cir. Shiloh, Ha...",
                 maxLines: 2,
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    overflow: TextOverflow.ellipsis),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, overflow: TextOverflow.ellipsis),
               ),
             ],
           ),
-          SizedBox(height: 5,),
+          const SizedBox(
+            height: 5,
+          ),
           Row(
-            children: [
+            children: const [
               Icon(
                 FeatherIcons.truck,
                 size: 14,
@@ -257,9 +230,7 @@ class HorizontalRestaurantList extends StatelessWidget {
               ),
               Text(
                 "Free delivery",
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
               ),
               SizedBox(
                 width: 30,
@@ -274,9 +245,7 @@ class HorizontalRestaurantList extends StatelessWidget {
               ),
               Text(
                 "5.0 (100+)",
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
               ),
             ],
           ),
@@ -285,7 +254,6 @@ class HorizontalRestaurantList extends StatelessWidget {
     );
   }
 }
-
 
 class ListOfRestaurants extends StatelessWidget {
   const ListOfRestaurants({
@@ -302,15 +270,12 @@ class ListOfRestaurants extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: context.width()/1.1,
+              width: context.width() / 1.1,
               height: 140,
               decoration: const BoxDecoration(
                 color: Colors.amberAccent,
-                borderRadius:
-                BorderRadius.all(Radius.circular(6)),
-                image: DecorationImage(
-                    image: AssetImage("assets/images/heaven_kitchen.png"),
-                    fit: BoxFit.cover),
+                borderRadius: BorderRadius.all(Radius.circular(6)),
+                image: DecorationImage(image: AssetImage("assets/images/heaven_kitchen.png"), fit: BoxFit.cover),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -319,18 +284,12 @@ class ListOfRestaurants extends StatelessWidget {
                     Container(
                       width: 50,
                       height: 20,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(4)),
-                          color: kMiniContainerColor),
+                      decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: kMiniContainerColor),
                       child: const Center(
                           child: Text(
-                            "50 min",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400),
-                          )),
+                        "50 min",
+                        style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w400),
+                      )),
                     ),
                     Align(
                       alignment: Alignment.topRight,
@@ -338,19 +297,16 @@ class ListOfRestaurants extends StatelessWidget {
                         width: 20,
                         height: 20,
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Colors.white,
-                                width: 0.5),
+                            border: Border.all(color: Colors.white, width: 0.5),
                             //  borderRadius: BorderRadius.all(Radius.circular(20)),
                             shape: BoxShape.circle,
-                            color: kCircleContainer
-                                .withOpacity(0.5)),
+                            color: kCircleContainer.withOpacity(0.5)),
                         child: const Center(
                             child: Icon(
-                              IconlyLight.heart,
-                              color: Colors.white,
-                              size: 9,
-                            )),
+                          IconlyLight.heart,
+                          color: Colors.white,
+                          size: 9,
+                        )),
                       ),
                     )
                   ],
@@ -366,7 +322,9 @@ class ListOfRestaurants extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 5,),
+            const SizedBox(
+              height: 5,
+            ),
             Row(
               children: const [
                 Icon(
@@ -380,14 +338,13 @@ class ListOfRestaurants extends StatelessWidget {
                 Text(
                   "1901 Thornridge Cir. Shiloh, Ha...",
                   maxLines: 2,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      overflow: TextOverflow.ellipsis),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, overflow: TextOverflow.ellipsis),
                 ),
               ],
             ),
-            const SizedBox(height: 5,),
+            const SizedBox(
+              height: 5,
+            ),
             Row(
               children: const [
                 Icon(
@@ -400,9 +357,7 @@ class ListOfRestaurants extends StatelessWidget {
                 ),
                 Text(
                   "Free delivery",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
                 ),
                 SizedBox(
                   width: 30,
@@ -417,9 +372,7 @@ class ListOfRestaurants extends StatelessWidget {
                 ),
                 Text(
                   "5.0 (100+)",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
                 ),
               ],
             ),

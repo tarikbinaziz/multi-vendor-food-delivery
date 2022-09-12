@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
-import 'package:multivendor_food_delivery_app/ui/widgets/mt_textField.dart';
+import 'package:multivendor_food_delivery_app/ui/widgets/mt_text_field.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ShippingAddress extends StatefulWidget {

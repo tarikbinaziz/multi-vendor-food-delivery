@@ -11,9 +11,11 @@ class OfferFoodScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: BackButton(color: Colors.black,),
+        leading: const BackButton(
+          color: Colors.black,
+        ),
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Offer',
           style: TextStyle(color: kTitleColor),
         ),
@@ -22,36 +24,38 @@ class OfferFoodScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: ListView(
           children: [
-           Container(
-             height: context.height()/5.5,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(image: AssetImage("assets/images/offerfood.png",),fit: BoxFit.fitWidth)
-                    ),
-
-                ),
-            SizedBox(height: 10,),
             Container(
-              height: context.height()/5.5,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(image: AssetImage("assets/images/offerfood2.png"),fit: BoxFit.fitWidth)
-                    ),
-
-                ),
-            SizedBox(height: 10,),
+              height: context.height() / 5.5,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(
+                      image: AssetImage(
+                        "assets/images/offerfood.png",
+                      ),
+                      fit: BoxFit.fitWidth)),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             Container(
-              height: context.height()/5.5,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(image: AssetImage("assets/images/offerfood3.png"),fit: BoxFit.fitWidth)
-                    ),
-
-                ),
+              height: context.height() / 5.5,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(image: AssetImage("assets/images/offerfood2.png"), fit: BoxFit.fitWidth)),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: context.height() / 5.5,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: const DecorationImage(image: AssetImage("assets/images/offerfood3.png"), fit: BoxFit.fitWidth),
+              ),
+            ),
           ],
         ),
       ),
-
     );
   }
 }

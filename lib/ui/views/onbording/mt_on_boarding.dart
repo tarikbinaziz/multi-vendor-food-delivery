@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/views/auth/mt_welcome_screen.dart';
@@ -72,19 +71,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                         Expanded(
                             child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Color(0xFFFFF7F5), borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
                           child: Column(
                             verticalDirection: VerticalDirection.down,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 20.0,
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                                 child: Text(
                                   textList[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: kTitleColor,
                                     fontSize: 25.0,
@@ -92,31 +91,31 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20.0,
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 24),
                                 child: Text(
                                   description[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: kSubTitleColor,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 30,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [for (var i = 0; i < imageList.length; i++) buildIndicator(currentIndex == i)],
                               ),
-                              Spacer(),
+                              const Spacer(),
                               InkWell(
                                 onTap: () {
                                   currentIndex < 2
-                                      ? pageViewController.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeIn)
+                                      ? pageViewController.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn)
                                       : const WelcomeScreen().launch(context);
                                 },
                                 child: Stack(
@@ -125,7 +124,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                     Image.asset("assets/images/button.png"),
                                     Text(
                                       currentIndex < 2 ? 'Next' : 'Get Started',
-                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
+                                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
                                     )
                                   ],
                                 ),
@@ -149,7 +148,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           width: isSelected ? 12 : 8,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: isSelected ? Color(0xFFFF6935) : Color(0xFFFBA06A),
+            color: isSelected ? const Color(0xFFFF6935) : const Color(0xFFFBA06A),
           ),
         ));
   }
