@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
+import 'package:multivendor_food_delivery_app/ui/views/auth/mt_signin.dart';
 import 'package:multivendor_food_delivery_app/ui/widgets/mt_button.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../../../const/const.dart';
 import '../../../const/const.dart';
 import 'mt_phone_auth.dart';
 
@@ -23,15 +23,15 @@ class WelcomeScreen extends StatelessWidget {
             "assets/logo/logo.png",
             height: 160,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 52.0, right: 52.0, top: 15),
+          const Padding(
+            padding: EdgeInsets.only(left: 52.0, right: 52.0, top: 15),
             child: Text(
               "Sign in & Register to Maan Food",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
@@ -45,11 +45,11 @@ class WelcomeScreen extends StatelessWidget {
                     "Continue with Google",
                     kButtonFBGColor,kTitleColor,
                     () {}),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 WelcomeButton(
-                    Icon(
+                    const Icon(
                       FeatherIcons.facebook,
                       size: 20,
                       color: Colors.white,
@@ -57,30 +57,31 @@ class WelcomeScreen extends StatelessWidget {
                     "Continue with Facebook",
                     kButtonSBGColor,Colors.white,
                     () {}),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 WelcomeButton(
-                    Icon(
+                    const Icon(
                       FeatherIcons.phone,
                       size: 20,
                     ),
                     "Continue with Phone",
                     kButtonFBGColor,kTitleColor, () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => PhoneAuth()));
+                      context, MaterialPageRoute(builder: (_) => const PhoneAuth()));
                 }),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 WelcomeButton(
-                    Icon(
+                    const Icon(
                       FeatherIcons.mail,
                       size: 20,
                     ),
                     "Continue with Email",
                     kButtonFBGColor,kTitleColor,
-                    () {}),
+                    () =>  Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => const SignInScreen()))),
               ],
             ),
           ),

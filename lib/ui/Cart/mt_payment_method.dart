@@ -28,7 +28,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   void _bottomSheet() {
     showModalBottomSheet(
         context: context,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10.0),
           topRight: Radius.circular(10.0),
@@ -43,7 +43,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Add New Card",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -52,15 +52,15 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     TextButton(
                         onPressed: () => finish(context),
-                        child: Icon(
+                        child: const Icon(
                           Icons.close,
                           color: kTitleColor,
                         )),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0,right: 15.0),
+              const Padding(
+                padding: EdgeInsets.only(left: 15.0,right: 15.0),
                 child: Divider(
                   thickness: 1,
                   color: kDividerColor,
@@ -130,11 +130,28 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: Container(
+          margin: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
+            width: context.width(),
+            height: 50,
+            decoration: BoxDecoration(
+              color: kMainColor,
+              border: Border.all(color: kMainColor),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: const Center(
+                child: Text(
+                  "Add Card",
+                  style: TextStyle(color: kCircleContainer),
+                ))).onTap(() {
+          _bottomSheet();
+        }),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: BackButton(color: Colors.black,),
+          leading: const BackButton(color: Colors.black,),
           elevation: 0,
-          title: Text(
+          title: const Text(
             'Payment Methord',
             style: TextStyle(color: kTitleColor),
           ),
@@ -144,7 +161,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Your payment cards',
+              const Text('Your payment cards',
                   style: TextStyle(
                       color: kTitleColor, fontWeight: FontWeight.w700)),
 
@@ -167,12 +184,12 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
               ),
 
               CheckboxListTile(
-                contentPadding: EdgeInsets.all(0),
+                contentPadding: const EdgeInsets.all(0),
                 controlAffinity: ListTileControlAffinity.leading,
                 activeColor: kMainColor,
                 title: Transform.translate(
-                  offset: Offset(-10, 0),
-                  child: Text(
+                  offset: const Offset(-10, 0),
+                  child: const Text(
                     "Use as the payment methord",
                     style: TextStyle(color: kTitleColor),
                   ),
@@ -204,12 +221,12 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
               ),
 
               CheckboxListTile(
-                contentPadding: EdgeInsets.all(0),
+                contentPadding: const EdgeInsets.all(0),
                 controlAffinity: ListTileControlAffinity.leading,
                 activeColor: kMainColor,
                 title: Transform.translate(
-                  offset: Offset(-10, 0),
-                  child: Text(
+                  offset: const Offset(-10, 0),
+                  child: const Text(
                     "Use as the payment methord",
                     style: TextStyle(color: kTitleColor),
                   ),
@@ -221,26 +238,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   });
                 },
               ),
-              SizedBox(
-                height: 40,
-              ),
-
-              Container(
-                  padding: EdgeInsets.all(8.0),
-                  width: context.width(),
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: kMainColor,
-                    border: Border.all(color: kMainColor),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Add Card",
-                    style: TextStyle(color: kCircleContainer),
-                  ))).onTap(() {
-                _bottomSheet();
-              })
             ],
           ),
         ),

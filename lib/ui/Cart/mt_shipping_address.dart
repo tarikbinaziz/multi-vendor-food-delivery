@@ -19,17 +19,13 @@ class _ShippingAddressState extends State<ShippingAddress> {
     showModalBottomSheet(
         isScrollControlled: true,
         context: context,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         builder: (builder) {
           return Padding(
-            padding:  EdgeInsets.only(left: 10.0,right: 10,top: 10,bottom: MediaQuery.of(context).viewInsets.bottom),
+            padding: EdgeInsets.only(left: 10.0, right: 10, top: 10, bottom: MediaQuery.of(context).viewInsets.bottom),
             child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: const Radius.circular(10.0),
-                      topRight: const Radius.circular(10.0))),
+              decoration:
+                  const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -37,7 +33,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Add New Address",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -47,123 +43,175 @@ class _ShippingAddressState extends State<ShippingAddress> {
                       // Spacer(),
                       TextButton(
                           onPressed: () => finish(context),
-                          child: Icon(
+                          child: const Icon(
                             Icons.close,
                             color: kTitleColor,
                           )),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     thickness: 1,
                     color: kDividerColor,
                   ),
-                  Text(
+                  const Text(
                     "Delivey Details",
                     style: TextStyle(color: kTitleColor),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(
-                    children: [
-                       Icon(
-                          FeatherIcons.mapPin,
-                          size: 16,
-                          color: kTruckColor,
-                        ),
-                         SizedBox(width: 20,),
-                         Text(
-                          "New York",
-                          style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),
-                        ),
-                       Spacer(),
-                       Icon(
-                          FeatherIcons.edit,
-                          size: 16,
-                          color: kMainColor,
-                        ),
-
+                    children: const [
+                      Icon(
+                        FeatherIcons.mapPin,
+                        size: 16,
+                        color: kTruckColor,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        "New York",
+                        style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w400),
+                      ),
+                      Spacer(),
+                      Icon(
+                        FeatherIcons.edit,
+                        size: 16,
+                        color: kMainColor,
+                      ),
                     ],
                   ),
-                  SizedBox(height: 20,),
-                  Text(
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
                     "We’re Missing Your Street",
-                    style: TextStyle(
-                        color: kTitleColor, fontWeight: FontWeight.w500),
+                    style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w500),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  CustomTextField("Enter your location", Text("Street")),
-                  SizedBox(
+                  CustomTextField("Enter your location", const Text("Street")),
+                  const SizedBox(
                     height: 20,
                   ),
-                  CustomTextField("Enter your apartment", Text("Apartment")),
-                  SizedBox(
+                  CustomTextField("Enter your apartment", const Text("Apartment")),
+                  const SizedBox(
                     height: 20,
                   ),
-                  CustomTextField("Enter your apartment", Text("(Optional) Floor or Apt No")),
-                  SizedBox(
+                  CustomTextField("Enter your apartment", const Text("(Optional) Floor or Apt No")),
+                  const SizedBox(
                     height: 20,
                   ),
-                  Text("Add a Label",style: TextStyle(color: kTitleColor),),
-                  SizedBox(
+                  const Text(
+                    "Add a Label",
+                    style: TextStyle(color: kTitleColor),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
-                  Row(children: [
-                    Column(
-                      children: [
-                        Container(
-                         padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: kMainColor.withOpacity(0.10),
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              border: Border.all(color: kMainColor),
+                            ),
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: kMainColor.withOpacity(0.10),
+                              ),
+                              child: const Icon(
+                                IconlyBold.home,
+                                color: kMainColor,
+                              ),
+                            ),
                           ),
-                          child: Icon(IconlyBold.home,color: kMainColor,),
-                        ),
-
-              Text("Home",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
-                      ],
-                    ),
-                    SizedBox(width: 20,),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: kTruckColor.withOpacity(0.10),
+                          const Text(
+                            "Home",
+                            style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w400),
                           ),
-                          child: Icon(IconlyBold.work,color: kTruckColor,),
-                        ),Text("Work",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
-                      ],
-                    ), SizedBox(width: 20,),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: kContainerLevelColor.withOpacity(0.10),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: kTruckColor.withOpacity(0.10),
+                            ),
+                            child: const Icon(
+                              IconlyBold.work,
+                              color: kTruckColor,
+                            ),
                           ),
-                          child: Icon(IconlyBold.user3,color: kContainerLevelColor,),
-                        ),Text("Partner",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
-                      ],
-                    ), SizedBox(width: 20,),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: kContainerlevelAddColor.withOpacity(0.10),
+                          const Text(
+                            "Work",
+                            style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w400),
                           ),
-                          child: Icon(IconlyBold.plus,color: kContainerlevelAddColor,),
-                        ),Text("Other",style: TextStyle(color: kTitleColor,fontWeight: FontWeight.w400),),
-                      ],
-                    ),
-                  ],),
-                  SizedBox(height: 20,),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: kContainerLevelColor.withOpacity(0.10),
+                            ),
+                            child: const Icon(
+                              IconlyBold.user3,
+                              color: kContainerLevelColor,
+                            ),
+                          ),
+                          const Text(
+                            "Partner",
+                            style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: kContainerlevelAddColor.withOpacity(0.10),
+                            ),
+                            child: const Icon(
+                              IconlyBold.plus,
+                              color: kContainerlevelAddColor,
+                            ),
+                          ),
+                          const Text(
+                            "Other",
+                            style: TextStyle(color: kTitleColor, fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       width: context.width(),
                       height: 50,
                       decoration: BoxDecoration(
@@ -171,14 +219,14 @@ class _ShippingAddressState extends State<ShippingAddress> {
                         border: Border.all(color: kMainColor),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Center(
+                      child: const Center(
                           child: Text(
-                            "Save",
-                            style: TextStyle(color: kCircleContainer),
-                          ))).onTap(() {
-
-                  }),
-                  SizedBox(height: 10,),
+                        "Save",
+                        style: TextStyle(color: kCircleContainer),
+                      ))).onTap(() {}),
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             ),
@@ -191,8 +239,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(color: kTitleColor),
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Shipping Address",
           style: TextStyle(color: kTitleColor),
         ),
@@ -203,13 +252,13 @@ class _ShippingAddressState extends State<ShippingAddress> {
           children: [
             ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 3,
                 itemBuilder: (_, i) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 15.0),
                     child: Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       width: context.width(),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
@@ -218,12 +267,12 @@ class _ShippingAddressState extends State<ShippingAddress> {
                           BoxShadow(
                             color: kShadowSecondColor.withOpacity(0.24),
                             blurRadius: 1,
-                            offset: Offset(1, 1), // Shadow position
+                            offset: const Offset(1, 1), // Shadow position
                           ),
                           BoxShadow(
                             color: kShadowSecondColor.withOpacity(0.24),
                             blurRadius: 1,
-                            offset: Offset(-1, -1), // Shadow position
+                            offset: const Offset(-1, -1), // Shadow position
                           ),
                         ],
                       ),
@@ -233,12 +282,10 @@ class _ShippingAddressState extends State<ShippingAddress> {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text(
                                 "Home",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: kTitleColor),
+                                style: TextStyle(fontWeight: FontWeight.w500, color: kTitleColor),
                               ),
                               Icon(
                                 FeatherIcons.edit,
@@ -247,16 +294,16 @@ class _ShippingAddressState extends State<ShippingAddress> {
                               )
                             ],
                           ),
-                          Text(
+                          const Text(
                             "New York, NY 10001-4374\nRoad NO: 17, Floor 27",
                             style: TextStyle(color: kSubTitleColor),
                           ),
                           CheckboxListTile(
-                            contentPadding: EdgeInsets.all(0),
+                            contentPadding: const EdgeInsets.all(0),
                             controlAffinity: ListTileControlAffinity.leading,
                             // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                             activeColor: kMainColor,
-                            title: Text(
+                            title: const Text(
                               "Use as the shipping address",
                               style: TextStyle(color: kTitleColor),
                             ),
@@ -272,9 +319,9 @@ class _ShippingAddressState extends State<ShippingAddress> {
                     ),
                   );
                 }),
-            Spacer(),
+            const Spacer(),
             Container(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 width: context.width(),
                 height: 50,
                 decoration: BoxDecoration(
@@ -282,7 +329,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                   border: Border.all(color: kMainColor),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: Center(
+                child: const Center(
                     child: Text(
                   "Add New Address",
                   style: TextStyle(color: kCircleContainer),

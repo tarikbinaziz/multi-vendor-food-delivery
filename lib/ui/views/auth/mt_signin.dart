@@ -4,25 +4,27 @@ import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/views/auth/mt_forgot_password.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../Location/mt_location.dart';
+
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.white,
-      elevation: 0,
-      title: Text(
-        "Sign In",
-        style: TextStyle(
-            fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
-      ),
+        child: Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text(
+          "Sign In",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: kTitleColor),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 24.0, right: 24, top: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,17 +36,16 @@ class SignInScreen extends StatelessWidget {
                   height: 160,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "Email Address ",
-                style: TextStyle( fontWeight: FontWeight.w500,color: kTitleColor),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               AppTextField(
-                decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFDEDEE0))),
+                decoration: const InputDecoration(
+                    enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color(0xFFDEDEE0))),
                     hintText: "Enter your Email  ",
                     hintStyle: TextStyle(color: kSubTitleColor),
                     prefixIcon: Icon(
@@ -53,17 +54,16 @@ class SignInScreen extends StatelessWidget {
                     )),
                 textFieldType: TextFieldType.EMAIL,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "Password",
-                style: TextStyle(fontWeight: FontWeight.w500,color: kTitleColor),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               AppTextField(
-                decoration: InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFDEDEE0))),
+                decoration: const InputDecoration(
+                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color(0xFFDEDEE0))),
                   hintText: "Enter your  password",
                   hintStyle: TextStyle(color: kSubTitleColor),
                   prefixIcon: Icon(
@@ -73,61 +73,51 @@ class SignInScreen extends StatelessWidget {
                 ),
                 textFieldType: TextFieldType.PASSWORD,
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 20,
               ),
               Align(
                 alignment: Alignment.centerRight,
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => ForgotPasswordScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => ForgotPasswordScreen()));
                   },
-                  child: Text(
-                    "Forgot Password",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        color: kSubTitleColor),
+                  child: const Text(
+                    "Forgot Password?",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: kSubTitleColor),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 30,
+              const SizedBox(
+                height: 20,
               ),
-
               ElevatedButton(
-                onPressed: () {},
-                child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.w700,color: kCircleContainer),),
-                style: ElevatedButton.styleFrom(
-                    primary: kMainColor, minimumSize: Size(double.infinity, 50)),
+                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (_)=>const LocationScreen()));},
+                style: ElevatedButton.styleFrom(primary: kMainColor, minimumSize: const Size(372, 50)),
+                child: const Text("Sign In"),
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 15,
               ),
               Center(
                 child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                        text: "or ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            color: kSubTitleColor),
-                        children: [
-                          TextSpan(
-                            text: "Register a new account",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: kTitleColor),
-                          ),
-                        ])),
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                    text: "or ",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: kSubTitleColor),
+                    children: [
+                      TextSpan(
+                        text: "Register a new account",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
               )
             ],
           ),
         ),
       ),
-    );
+    ));
   }
 }

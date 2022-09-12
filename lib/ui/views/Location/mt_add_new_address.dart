@@ -15,7 +15,7 @@ class AddNewAddress extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           titleSpacing: 0.0,
-          iconTheme: IconThemeData(color: kTitleColor),
+          iconTheme: const IconThemeData(color: kTitleColor),
           title: Container(
             width: double.infinity,
             height: 40,

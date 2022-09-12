@@ -22,8 +22,9 @@ class _CartScreenState extends State<CartScreen> {
         appBar: AppBar(
           centerTitle: false,
           elevation: 0,
+          iconTheme: const IconThemeData(color: kTitleColor),
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             "Cart",
             style: TextStyle(color: kTitleColor),
           ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:nb_utils/nb_utils.dart';
 import '../../const/const.dart';
 import '../views/Location/mt_add_new_address.dart';
+import '../widgets/mt_horizontal_food_card.dart';
 import 'mt_details_your_restuarant.dart';
 import 'mt_find_your_resturant.dart';
 import 'mt_offer.dart';
@@ -23,13 +25,14 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         builder: (builder) {
           return Container(
+            height: 430.0,
             color: Colors.transparent,
             child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                        topLeft: const Radius.circular(10.0),
-                        topRight: const Radius.circular(10.0))),
+                        topLeft: Radius.circular(10.0),
+                        topRight: Radius.circular(10.0))),
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -41,7 +44,7 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                           child: Row(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(
                                     FeatherIcons.send,
                                     color: kMainColor,
@@ -58,10 +61,10 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                                   ),
                                 ],
                               ),
-                              Spacer(),
+                              const Spacer(),
                               TextButton(
                                   onPressed: () => finish(context),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.close,
                                     color: kTitleColor,
                                   )),
@@ -69,7 +72,7 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                           ),
                         ),
                         SizedBox(
-                          height: 220,
+                          height: 300,
                           child: ListView.builder(
                               itemCount: 5,
                               itemBuilder: (_, i) {
@@ -82,9 +85,9 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                                   child: Column(
                                     children: [
                                       Container(
-                                        height: 100.0,
+                                        height: 120.0,
                                         width: context.width(),
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             borderRadius: BorderRadius.only(
                                               topRight: Radius.circular(10.0),
                                               topLeft: Radius.circular(10.0),
@@ -97,29 +100,26 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                                             )),
                                       ),
                                       ListTile(
-                                        title: Text(
+                                        title: const Text(
                                           "New York",
                                           style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w700,
+                                              fontWeight: FontWeight.bold,
                                               color: Colors.black),
                                         ),
-                                        subtitle: Text(
+                                        subtitle: const Text(
                                           "Middleton, Tennessee(TN), 38052",
                                           style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400,
                                               color: kSubTitleColor),
                                         ),
                                         trailing: Container(
-                                          height: 60,
-                                          width: 60,
+                                          padding: const EdgeInsets.all(10.0),
                                           decoration: BoxDecoration(
-                                              color: kSearchContainerColor
+                                              color: kMainColor
                                                   .withOpacity(0.08),
                                               shape: BoxShape.circle),
+                                          // ignore: prefer_const_constructors
                                           child: Icon(
-                                            FeatherIcons.edit,
+                                            IconlyBold.edit,
                                             color: kMainColor,
                                           ),
                                         ),
@@ -129,34 +129,31 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                                 );
                               }),
                         ),
-                        Spacer(),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => AddNewAddress()));
-                          },
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.add,
-                                color: kTitleColor,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "Add New Address",
-                                maxLines: 2,
-                                style: TextStyle(
-                                    color: kTitleColor,
-                                    fontWeight: FontWeight.bold,
-                                    overflow: TextOverflow.ellipsis),
-                              ),
-                            ],
-                          ),
-                        ),
+                        const Spacer(),
+                        Row(
+                          children: const [
+                            Icon(
+                              Icons.add,
+                              color: kTitleColor,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Add New Address",
+                              maxLines: 2,
+                              style: TextStyle(
+                                  color: kTitleColor,
+                                  fontWeight: FontWeight.bold,
+                                  overflow: TextOverflow.ellipsis),
+                            ),
+                          ],
+                        ).onTap(() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => AddNewAddress()));
+                        }),
                       ],
                     ),
                   ),
@@ -169,41 +166,40 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        titleSpacing: 0.0,
-        automaticallyImplyLeading: false,
-        elevation: 0,
         title: ListTile(
-          title: Text(
+          contentPadding: EdgeInsets.zero,
+          title: const Text(
             "Hi Shaidul Islam",
             style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.bold,
                 color: Colors.black),
           ),
-          subtitle: Text(
+          subtitle: const Text(
             "It’s lunch time!",
             style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w400,
                 color: kSubTitleColor),
           ),
           trailing: Container(
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-                color: kSearchContainerColor.withOpacity(0.08),
+                color: kMainColor.withOpacity(0.08),
                 shape: BoxShape.circle),
+            // ignore: prefer_const_constructors
             child: Icon(
               FeatherIcons.search,
               color: kMainColor,
             ),
           ),
         ),
+        automaticallyImplyLeading: false,
+        titleSpacing: 0.0,
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(14.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,7 +209,7 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                 decoration: BoxDecoration(
                   color: Colors.amberAccent,
                   borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage("assets/images/map_image.png"),
                       fit: BoxFit.cover),
                 ),
@@ -229,24 +225,23 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                         decoration: BoxDecoration(
                             color: kMiniContainerColor.withOpacity(0.2),
                             shape: BoxShape.circle),
-                        child: Icon(
+                        child: const Icon(
                           Icons.location_on,
                           color: kMainColor,
                         ),
                       ),
-                      title: Text(
+                      title: const Text(
                         "Current location",
                         style: TextStyle(
-                            fontWeight: FontWeight.w700, color: Colors.black),
+                            fontWeight: FontWeight.bold, color: kTitleColor),
                       ),
-                      subtitle: Text(
+                      subtitle: const Text(
                         "Middleton, Tennessee(TN), 38052",
                         style: TextStyle(
                             fontSize: 12,
-                            fontWeight: FontWeight.w400,
                             color: kSubTitleColor),
                       ),
-                      trailing: Icon(
+                      trailing: const Icon(
                         FeatherIcons.arrowRight,
                         color: kSubTitleColor,
                       ),
@@ -254,292 +249,136 @@ class _MTHomeScreenState extends State<MTHomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    color: kPickUpContainerColor,
-                    // width: MediaQuery.of(context).size.width/2,
-                    width: 165,
-                    height: 114,
-                    child: Stack(
-                      alignment: Alignment.topRight,
-                      children: [
-                        Image.asset(
-                          "assets/images/pick up.png",
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Padding(
-                            padding:
-                            const EdgeInsets.only(top: 17.0, left: 10),
-                            child: Column(
-                              // mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Pick Up",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 20),
-                                ),
-                                Text(
-                                  "Lorem ipsum dolor\nsit amet\nnsectetur.",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13,
-                                      color: kSubTitleColor),
-                                ),
-                              ],
-                            ),
+
+                    width: context.width() / 2.2,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        color: kPickUpContainerColor,
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: const DecorationImage(image: AssetImage("assets/images/pick up.png"))
+                    ),
+                    child: Padding(
+                      padding:
+                      const EdgeInsets.only(top: 17.0, left: 10),
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Pick Up",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
                           ),
-                        )
-                      ],
+                          Text(
+                            "Lorem ipsum \ndolor sit amet\nnsectetur.",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: kSubTitleColor),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+                  // ignore: prefer_const_constructors
                   SizedBox(
                     width: 10,
                   ),
                   Expanded(
                     child: Container(
-                      color: kOfferContainerColor,
-
-                      height: 114,
-                      // width: MediaQuery.of(context).size.width/2,
-                      child: Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Image.asset(
-                            "assets/images/offer.png",
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                              padding:
-                              const EdgeInsets.only(left: 10.0, top: 17),
-                              child: Column(
-                                // mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Offer",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20),
-                                  ),
-                                  Text(
-                                    "Lorem ipsum\n dolor sit amet\nnsectetur.",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 13,
-                                        color: kSubTitleColor),
-                                  ),
-                                ],
-                              ),
+                      width: context.width() / 2.2,
+                      height: 120,
+                      decoration: BoxDecoration(
+                          color: kPickUpContainerColor,
+                          borderRadius: BorderRadius.circular(10.0),
+                          image: const DecorationImage(image: AssetImage("assets/images/offer.png"),fit: BoxFit.cover)
+                      ),
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(left: 10.0, top: 17),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Offer",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
                             ),
-                          )
-                        ],
+                            Text(
+                              "Lorem ipsum\ndolor sit amet\nnsectetur.",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: kSubTitleColor),
+                            ),
+                          ],
+                        ),
                       ).onTap((){
-                        OfferFoodScreen().launch(context);
+                        const OfferFoodScreen().launch(context);
                       }),
                     ),
                   ),
                 ],
               ),
-              Container(
-                color: kFindResturantContainerColor,
-                // width: MediaQuery.of(context).size.width/2,
-                width: double.infinity,
-                height: 114,
-                child: Stack(
-                  alignment: Alignment.topRight,
-                  children: [
-                    Image.asset(
-                      "assets/images/find_resturant.png",
-                    ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, top: 25),
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Find restaurant",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 20),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              "Lorem ipsum dolor sit amet\nnsectetur.",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 13,
-                                  color: kSubTitleColor),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ).onTap(() => const FindYourResturant().launch(context))
-                  ],
-                ),
-              ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              Container(
+                width: context.width(),
+                height: 120,
+                decoration: BoxDecoration(
+                    color: kPickUpContainerColor,
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: const DecorationImage(image: AssetImage( "assets/images/find_resturant.png",),fit: BoxFit.cover)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10.0, top: 25),
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Find restaurant",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Lorem ipsum dolor sit amet\nnsectetur.",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 13,
+                            color: kSubTitleColor),
+                      ),
+                    ],
+                  ),
+                ).onTap(() => const FindYourResturant().launch(context)),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
                 "Nearby restaurant",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                height: 20,
+              const SizedBox(
+                height: 10,
               ),
               HorizontalList(
-                  spacing: 15,
+                  spacing: 10,
                   itemCount: 10,
+                  padding: EdgeInsets.zero,
                   itemBuilder: (_, i) {
-                    return Container(
-                      width: context.width() / 1.6,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: context.width() / 1.6,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              color: Colors.amberAccent,
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(6)),
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/rst1.png"),
-                                  fit: BoxFit.cover),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Stack(
-                                children: [
-                                  Container(
-                                    width: 50,
-                                    height: 20,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20)),
-                                        color: kMiniContainerColor),
-                                    child: Center(
-                                        child: Text(
-                                          "50 min",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400),
-                                        )),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: Container(
-                                      width: 20,
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Colors.white,
-                                              width: 0.5),
-                                          //  borderRadius: BorderRadius.all(Radius.circular(20)),
-                                          shape: BoxShape.circle,
-                                          color: kCircleContainer
-                                              .withOpacity(0.5)),
-                                      child: Center(
-                                          child: Icon(
-                                            FeatherIcons.heart,
-                                            color: Colors.white,
-                                            size: 9,
-                                          )),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "Restaurant Name",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                size: 14,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "1901 Thornridge Cir. Shiloh, Ha...",
-                                maxLines: 2,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    overflow: TextOverflow.ellipsis),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                FeatherIcons.truck,
-                                size: 14,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "Free delivery",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14),
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Icon(
-                                Icons.star,
-                                size: 8,
-                                color: kStarColor,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "5.0 (100+)",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 20,
-                          )
-                        ],
-                      ),
-                    ).onTap(() => DetailsRestaurant().launch(context));
+                    return const HorizontalRestaurantList().onTap(() => const DetailsRestaurant().launch(context));
                   })
             ],
           ),

@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.multivendor_food_delivery_app">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
    <application
         android:label="multivendor_food_delivery_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyAyrtFWPu8mR5xJdYDHVY7QTMgt8dwnZMc"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,8 +36,5 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2"/>
-       <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value='AIzaSyAiROVvJsXaSyt4XMy4TSlQfkBlp1ZE6gI'/>
-            />
     </application>
 </manifest>

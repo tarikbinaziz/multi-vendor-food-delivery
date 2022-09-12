@@ -15,11 +15,79 @@ class ItemDtailsScreen extends StatefulWidget {
 class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
   bool _checkboxListTile = false;
   bool val= false;
+  bool isAdded = false;
+  int value = 1;
   @override
   Widget build(BuildContext context) {
 
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: SizedBox(
+          height: 60.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+            children: [
+              Text(
+                " \$5.00",
+                style: TextStyle(
+                    color: kTruckColor, fontWeight: FontWeight.bold,fontSize: 20.0),
+              ),
+              Spacer(),
+              Container(
+                margin: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
+                width: context.width() / 1.8,
+                decoration: BoxDecoration(
+                  color: kMainColor,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Center(
+                    child: Text(
+                      'Add To Cart',
+                      style: TextStyle(color: Colors.white),
+                    )),
+              ).onTap(() {
+                setState(() {
+                  isAdded = !isAdded;
+                });
+              }).visible(!isAdded),
+              Container(
+                padding: EdgeInsets.all(8.0),
+                width: context.width() / 1.8,
+                decoration: BoxDecoration(
+                  color: kMainColor,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(
+                      FeatherIcons.minus,
+                      color: Colors.white,
+                    ).onTap(() {
+                      setState(() {
+                        value > 1 ? value-- : value = 1;
+                      });
+                    }),
+                    Text(
+                      '$value in bag',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Icon(
+                      FeatherIcons.plus,
+                      color: Colors.white,
+                    ).onTap(() {
+                      setState(() {
+                        value++;
+                      });
+                    }),
+                  ],
+                ),
+              ).visible(isAdded),
+            ],
+          ),
+        ),
         body: SingleChildScrollView(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -265,45 +333,7 @@ class _ItemDtailsScreenState extends State<ItemDtailsScreen> {
                 SizedBox(
                   height: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                  children: [
-                    Text(
-                      " \$5.00",
-                      style: TextStyle(
-                          color: kTruckColor, fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      width: 34,
-                    ),
-                    Container(
-                      padding:
-                      EdgeInsets.all(8.0),
-                      width: context.width() /
-                          1.4,
-                      height: 50,
-                      decoration:
-                      BoxDecoration(
-                        color: kMainColor,
-                        border: Border.all(
-                            color:
-                            kMainColor),
-                        borderRadius:
-                        BorderRadius
-                            .circular(
-                            8.0),
-                      ),
-                      child: Center(
-                          child: Text(
-                            'Add To bag',
-                            style: TextStyle(
-                                color:
-                                kCircleContainer,fontWeight: FontWeight.w700),
-                          )),
-                    )
-                  ],
-                )
               ],
             ),
           ),

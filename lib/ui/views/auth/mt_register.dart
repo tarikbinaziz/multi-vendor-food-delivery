@@ -4,6 +4,8 @@ import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/views/auth/mt_signin.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../Location/mt_location.dart';
+
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -13,12 +15,12 @@ class RegisterScreen extends StatelessWidget {
         child: Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Register New Account",
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
+              fontSize: 18, fontWeight: FontWeight.bold, color: kTitleColor),
         ),
       ),
       body: SingleChildScrollView(
@@ -35,14 +37,14 @@ class RegisterScreen extends StatelessWidget {
                   height: 160,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "Full Name",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Color(0xFFDEDEE0))),
@@ -53,15 +55,15 @@ class RegisterScreen extends StatelessWidget {
                       color: kMainColor,
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "Password",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               AppTextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Color(0xFFDEDEE0))),
                     hintText: "Enter your  password",
@@ -72,15 +74,15 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     ), textFieldType: TextFieldType.PASSWORD,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "Confirm Password",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               AppTextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Color(0xFFDEDEE0))),
                     hintText: "Enter your password",
@@ -91,26 +93,26 @@ class RegisterScreen extends StatelessWidget {
                     ),
                 ), textFieldType: TextFieldType.PASSWORD,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               ElevatedButton(
-                onPressed: () {},
-                child: Text("Continue"),
+                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (_)=>const LocationScreen()));},
                 style: ElevatedButton.styleFrom(
-                    primary: kMainColor, minimumSize: Size(372, 50)),
+                    primary: kMainColor, minimumSize: const Size(372, 50)),
+                child: const Text("Continue"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Center(
                 child: InkWell(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=> SignInScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=> const SignInScreen()));
                   },
                   child: RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
+                      text: const TextSpan(
                           text: "or ",
                           style: TextStyle(
                               fontSize: 16,

@@ -49,13 +49,14 @@ class _OtpFormState extends State<OtpForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        title: Text(
+        automaticallyImplyLeading: false,
+        title: const Text(
           "Verification",
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
+              fontSize: 18, fontWeight: FontWeight.bold, color: kTitleColor),
         ),
       ),
       body: Padding(
@@ -63,13 +64,13 @@ class _OtpFormState extends State<OtpForm> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 30.0),
+                  padding: EdgeInsets.only(left: 30.0),
                   child: Text(
                     "Enter the 6 digit code sent to",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500,color: Colors.black),
@@ -77,7 +78,7 @@ class _OtpFormState extends State<OtpForm> {
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
 
@@ -176,14 +177,14 @@ class _OtpFormState extends State<OtpForm> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 44.0, right: 44.0),
                 child: RichText(
                     textAlign: TextAlign.center,
-                    text: TextSpan(
+                    text: const TextSpan(
                         text: "I didn’t receive code ",
                         style: TextStyle(
                             fontSize: 13,
@@ -199,19 +200,17 @@ class _OtpFormState extends State<OtpForm> {
                           )
                         ])),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => OtpForm()));
+                      MaterialPageRoute(builder: (_) => const LocationScreen()));
                 },
-                child: InkWell(child: Text("Verify Me"),onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=>LocationScreen()));
-                },),
                 style: ElevatedButton.styleFrom(
-                    primary: kMainColor, minimumSize: Size(372, 50)),
+                    primary: kMainColor, minimumSize: const Size(372, 50)),
+                child: const Text("Verify Me"),
               )
             ],
           ),

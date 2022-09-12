@@ -17,24 +17,24 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: BackButton(color: Colors.black),
+        leading: const BackButton(color: Colors.black),
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Track Your Order",
           style: TextStyle(color: kTitleColor),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               FeatherIcons.xCircle,
               color: kSubTitleColor,
             ),
-            alignment: Alignment(2, 0),
+            alignment: const Alignment(2, 0),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               FeatherIcons.crosshair,
               color: kTitleColor,
             ),
@@ -50,7 +50,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
           ),
           Container(
             height: context.height() / 2.2,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(35),
                   topRight: Radius.circular(35),

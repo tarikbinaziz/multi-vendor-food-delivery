@@ -15,7 +15,7 @@ class SearchPage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         titleSpacing: 0.0,
-        iconTheme: IconThemeData(color: kTitleColor),
+        iconTheme: const IconThemeData(color: kTitleColor),
         // The search area hereå
           title: Container(
             width: double.infinity,

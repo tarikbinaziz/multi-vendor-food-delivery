@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:multivendor_food_delivery_app/const/const.dart';
 import 'package:multivendor_food_delivery_app/ui/styles/otp_form.dart';
 import 'package:nb_utils/nb_utils.dart';
-
-import 'mt_register.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -15,13 +12,14 @@ class ForgotPasswordScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
+            automaticallyImplyLeading: false,
             elevation: 0,
             centerTitle: false,
-            title: Text(
+            title: const Text(
               "Forgot Password",
               style: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
+                  fontSize: 18, fontWeight: FontWeight.bold, color: kTitleColor),
             ),
           ),
           body: Padding(
@@ -30,26 +28,26 @@ class ForgotPasswordScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 35,
                 ),
-            Text(
+                const Text(
               "Please enter your phone number below to  revice your OTP code",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500,color: Colors.black),
             ),
 
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Text(
+                const Text(
                   "Mobile Number",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 AppTextField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Color(0xFFDEDEE0))),
                       hintText: "Enter your phone number",
@@ -60,17 +58,17 @@ class ForgotPasswordScreen extends StatelessWidget {
                       )),
                   textFieldType: TextFieldType.PHONE,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 34,
                 ),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => OtpForm()));
+                        MaterialPageRoute(builder: (_) => const OtpForm()));
                   },
-                  child: Text("Send OTP"),
                   style: ElevatedButton.styleFrom(
-                      primary: kMainColor, minimumSize: Size(372, 50)),
+                      primary: kMainColor, minimumSize: const Size(372, 50)),
+                  child: const Text("Send OTP"),
                 )
               ],
             ),
